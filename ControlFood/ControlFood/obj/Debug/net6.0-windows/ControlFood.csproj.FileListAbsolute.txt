@@ -18,3 +18,13 @@ C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debu
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ControlFood.pdb
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.genruntimeconfig.cache
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ref\ControlFood.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\Ubiety.Dns.Core.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ZstdNet.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\MySqlConnector.dll
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.csproj.CopyComplete

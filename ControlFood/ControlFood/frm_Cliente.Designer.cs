@@ -43,15 +43,15 @@
             this.pcb_Cancelar = new System.Windows.Forms.PictureBox();
             this.pcb_Voltar = new System.Windows.Forms.PictureBox();
             this.gpb_FrmCliente = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCepCli = new System.Windows.Forms.TextBox();
+            this.txtUfCli = new System.Windows.Forms.TextBox();
+            this.txtCidadeCli = new System.Windows.Forms.TextBox();
+            this.txtBairroCli = new System.Windows.Forms.TextBox();
+            this.txtNumCli = new System.Windows.Forms.TextBox();
+            this.txtEnderecoCli = new System.Windows.Forms.TextBox();
+            this.txtTelCli = new System.Windows.Forms.TextBox();
+            this.txtCpfCli = new System.Windows.Forms.TextBox();
+            this.txtNomeCli = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -169,6 +169,7 @@
             this.pcb_Confirmar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Confirmar.TabIndex = 5;
             this.pcb_Confirmar.TabStop = false;
+            this.pcb_Confirmar.Click += new System.EventHandler(this.pcb_Confirmar_Click);
             // 
             // pcb_Cancelar
             // 
@@ -193,17 +194,17 @@
             // 
             // gpb_FrmCliente
             // 
-            this.gpb_FrmCliente.Controls.Add(this.textBox9);
-            this.gpb_FrmCliente.Controls.Add(this.textBox8);
+            this.gpb_FrmCliente.Controls.Add(this.txtCepCli);
+            this.gpb_FrmCliente.Controls.Add(this.txtUfCli);
             this.gpb_FrmCliente.Controls.Add(this.pcb_Cancelar);
-            this.gpb_FrmCliente.Controls.Add(this.textBox7);
+            this.gpb_FrmCliente.Controls.Add(this.txtCidadeCli);
             this.gpb_FrmCliente.Controls.Add(this.pcb_Confirmar);
-            this.gpb_FrmCliente.Controls.Add(this.textBox6);
-            this.gpb_FrmCliente.Controls.Add(this.textBox5);
-            this.gpb_FrmCliente.Controls.Add(this.textBox4);
-            this.gpb_FrmCliente.Controls.Add(this.textBox3);
-            this.gpb_FrmCliente.Controls.Add(this.textBox2);
-            this.gpb_FrmCliente.Controls.Add(this.textBox1);
+            this.gpb_FrmCliente.Controls.Add(this.txtBairroCli);
+            this.gpb_FrmCliente.Controls.Add(this.txtNumCli);
+            this.gpb_FrmCliente.Controls.Add(this.txtEnderecoCli);
+            this.gpb_FrmCliente.Controls.Add(this.txtTelCli);
+            this.gpb_FrmCliente.Controls.Add(this.txtCpfCli);
+            this.gpb_FrmCliente.Controls.Add(this.txtNomeCli);
             this.gpb_FrmCliente.Controls.Add(this.label9);
             this.gpb_FrmCliente.Controls.Add(this.label8);
             this.gpb_FrmCliente.Controls.Add(this.label7);
@@ -220,68 +221,68 @@
             this.gpb_FrmCliente.TabStop = false;
             this.gpb_FrmCliente.Text = "Ficha Cliente";
             // 
-            // textBox9
+            // txtCepCli
             // 
-            this.textBox9.Location = new System.Drawing.Point(43, 172);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(124, 23);
-            this.textBox9.TabIndex = 17;
+            this.txtCepCli.Location = new System.Drawing.Point(43, 172);
+            this.txtCepCli.Name = "txtCepCli";
+            this.txtCepCli.Size = new System.Drawing.Size(124, 23);
+            this.txtCepCli.TabIndex = 17;
             // 
-            // textBox8
+            // txtUfCli
             // 
-            this.textBox8.Location = new System.Drawing.Point(241, 143);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(83, 23);
-            this.textBox8.TabIndex = 16;
+            this.txtUfCli.Location = new System.Drawing.Point(241, 143);
+            this.txtUfCli.Name = "txtUfCli";
+            this.txtUfCli.Size = new System.Drawing.Size(83, 23);
+            this.txtUfCli.TabIndex = 16;
             // 
-            // textBox7
+            // txtCidadeCli
             // 
-            this.textBox7.Location = new System.Drawing.Point(64, 143);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(141, 23);
-            this.textBox7.TabIndex = 15;
+            this.txtCidadeCli.Location = new System.Drawing.Point(64, 143);
+            this.txtCidadeCli.Name = "txtCidadeCli";
+            this.txtCidadeCli.Size = new System.Drawing.Size(141, 23);
+            this.txtCidadeCli.TabIndex = 15;
             // 
-            // textBox6
+            // txtBairroCli
             // 
-            this.textBox6.Location = new System.Drawing.Point(173, 114);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(151, 23);
-            this.textBox6.TabIndex = 14;
+            this.txtBairroCli.Location = new System.Drawing.Point(173, 114);
+            this.txtBairroCli.Name = "txtBairroCli";
+            this.txtBairroCli.Size = new System.Drawing.Size(151, 23);
+            this.txtBairroCli.TabIndex = 14;
             // 
-            // textBox5
+            // txtNumCli
             // 
-            this.textBox5.Location = new System.Drawing.Point(71, 111);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(49, 23);
-            this.textBox5.TabIndex = 13;
+            this.txtNumCli.Location = new System.Drawing.Point(71, 111);
+            this.txtNumCli.Name = "txtNumCli";
+            this.txtNumCli.Size = new System.Drawing.Size(49, 23);
+            this.txtNumCli.TabIndex = 13;
             // 
-            // textBox4
+            // txtEnderecoCli
             // 
-            this.textBox4.Location = new System.Drawing.Point(71, 77);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(253, 23);
-            this.textBox4.TabIndex = 12;
+            this.txtEnderecoCli.Location = new System.Drawing.Point(71, 77);
+            this.txtEnderecoCli.Name = "txtEnderecoCli";
+            this.txtEnderecoCli.Size = new System.Drawing.Size(253, 23);
+            this.txtEnderecoCli.TabIndex = 12;
             // 
-            // textBox3
+            // txtTelCli
             // 
-            this.textBox3.Location = new System.Drawing.Point(211, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(113, 23);
-            this.textBox3.TabIndex = 11;
+            this.txtTelCli.Location = new System.Drawing.Point(211, 45);
+            this.txtTelCli.Name = "txtTelCli";
+            this.txtTelCli.Size = new System.Drawing.Size(113, 23);
+            this.txtTelCli.TabIndex = 11;
             // 
-            // textBox2
+            // txtCpfCli
             // 
-            this.textBox2.Location = new System.Drawing.Point(55, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(115, 23);
-            this.textBox2.TabIndex = 10;
+            this.txtCpfCli.Location = new System.Drawing.Point(55, 45);
+            this.txtCpfCli.Name = "txtCpfCli";
+            this.txtCpfCli.Size = new System.Drawing.Size(115, 23);
+            this.txtCpfCli.TabIndex = 10;
             // 
-            // textBox1
+            // txtNomeCli
             // 
-            this.textBox1.Location = new System.Drawing.Point(55, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 23);
-            this.textBox1.TabIndex = 9;
+            this.txtNomeCli.Location = new System.Drawing.Point(55, 16);
+            this.txtNomeCli.Name = "txtNomeCli";
+            this.txtNomeCli.Size = new System.Drawing.Size(269, 23);
+            this.txtNomeCli.TabIndex = 9;
             // 
             // label9
             // 
@@ -433,15 +434,15 @@
         private PictureBox pcb_Cancelar;
         private PictureBox pcb_Voltar;
         private GroupBox gpb_FrmCliente;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtCepCli;
+        private TextBox txtUfCli;
+        private TextBox txtCidadeCli;
+        private TextBox txtBairroCli;
+        private TextBox txtNumCli;
+        private TextBox txtEnderecoCli;
+        private TextBox txtTelCli;
+        private TextBox txtCpfCli;
+        private TextBox txtNomeCli;
         private Label label9;
         private Label label8;
         private Label label7;

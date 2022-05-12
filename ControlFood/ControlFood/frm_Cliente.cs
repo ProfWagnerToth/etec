@@ -24,5 +24,28 @@ namespace ControlFood
             Close();
             
         }
+        //Instanciando a Classe e criando Objeto do Método Inserir
+        class_Clientes newCli = new class_Clientes();
+        private void pcb_Confirmar_Click(object sender, EventArgs e)
+        {
+            //Recebendo Informações das TextBox do Formulário
+            try
+            {
+                newCli.setNomeCli(txtNomeCli.Text);
+                newCli.setCpfCli(txtCpfCli.Text);
+                newCli.setTelCli(txtTelCli.Text);
+                newCli.setEnderecoCli(txtEnderecoCli.Text);
+                newCli.setNumCli(Int32.Parse(txtNumCli.Text));
+                newCli.setBairroCli(txtBairroCli.Text);
+                newCli.setCidadeCli(txtCidadeCli.Text);
+                newCli.setufCli(txtUfCli.Text);
+                newCli.setCepCli(txtCepCli.Text);
+                newCli.inserir();
+            }
+            finally
+            {
+                MessageBox.Show("Registro Inserido com Sucesso!!!");
+            }
+        }
     }
 }
