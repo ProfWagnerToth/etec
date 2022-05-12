@@ -189,6 +189,7 @@
             this.pcb_Voltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Voltar.TabIndex = 7;
             this.pcb_Voltar.TabStop = false;
+            this.pcb_Voltar.Click += new System.EventHandler(this.pcb_Voltar_Click);
             // 
             // gpb_FrmCliente
             // 

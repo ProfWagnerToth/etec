@@ -1,8 +1,5 @@
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ControlFood.exe
-C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ControlFood.deps.json
-C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ControlFood.runtimeconfig.json
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ControlFood.dll
-C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ControlFood.pdb
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.csproj.AssemblyReference.cache
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.Form1.resources
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.frm_Cliente.resources
@@ -16,5 +13,8 @@ C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debu
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.dll
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\refint\ControlFood.dll
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.pdb
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ControlFood.deps.json
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ControlFood.runtimeconfig.json
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ControlFood.pdb
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.genruntimeconfig.cache
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ref\ControlFood.dll

@@ -16,5 +16,13 @@ namespace ControlFood
         {
             InitializeComponent();
         }
+
+        private void pcb_Voltar_Click(object sender, EventArgs e)
+        {
+            frm_Menu newFrm_Menu = new frm_Menu();
+            newFrm_Menu.Show();
+            Close();
+            
+        }
     }
 }
