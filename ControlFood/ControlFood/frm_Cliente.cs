@@ -41,11 +41,43 @@ namespace ControlFood
                 newCli.setufCli(txtUfCli.Text);
                 newCli.setCepCli(txtCepCli.Text);
                 newCli.inserir();
+                dataGridView1.DataSource = newCli.Consultar();
             }
             finally
             {
                 MessageBox.Show("Registro Inserido com Sucesso!!!");
+                txtNomeCli.Clear();
+                txtCpfCli.Clear();
+                txtTelCli.Clear();
+                txtEnderecoCli.Clear();
+                txtNumCli.Clear();
+                txtBairroCli.Clear();
+                txtCidadeCli.Clear();
+                txtUfCli.Clear();
+                txtCepCli.Clear();
+                txtNomeCli.Focus();
             }
+        }
+
+        private void pcb_Inserir_Click(object sender, EventArgs e)
+        {
+            gpb_FrmCliente.Visible=true;
+            txtNomeCli.Focus();
+        }
+
+        private void pcb_Cancelar_Click(object sender, EventArgs e)
+        {
+            txtNomeCli.Clear();
+            txtCpfCli.Clear();
+            txtTelCli.Clear();
+            txtEnderecoCli.Clear();
+            txtNumCli.Clear();
+            txtBairroCli.Clear();
+            txtCidadeCli.Clear();
+            txtUfCli.Clear();
+            txtCepCli.Clear();
+            gpb_FrmCliente.Visible = false;
+            
         }
     }
 }

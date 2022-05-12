@@ -129,6 +129,7 @@
             this.pcb_Inserir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Inserir.TabIndex = 1;
             this.pcb_Inserir.TabStop = false;
+            this.pcb_Inserir.Click += new System.EventHandler(this.pcb_Inserir_Click);
             // 
             // pcb_Editar
             // 
@@ -180,6 +181,7 @@
             this.pcb_Cancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Cancelar.TabIndex = 6;
             this.pcb_Cancelar.TabStop = false;
+            this.pcb_Cancelar.Click += new System.EventHandler(this.pcb_Cancelar_Click);
             // 
             // pcb_Voltar
             // 
@@ -220,6 +222,7 @@
             this.gpb_FrmCliente.TabIndex = 8;
             this.gpb_FrmCliente.TabStop = false;
             this.gpb_FrmCliente.Text = "Ficha Cliente";
+            this.gpb_FrmCliente.Visible = false;
             // 
             // txtCepCli
             // 
