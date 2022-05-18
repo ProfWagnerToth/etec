@@ -28,3 +28,4 @@ C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debu
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\ZstdNet.dll
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\bin\Debug\net6.0-windows\MySqlConnector.dll
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.csproj.CopyComplete
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.frm_Pesquisa.resources

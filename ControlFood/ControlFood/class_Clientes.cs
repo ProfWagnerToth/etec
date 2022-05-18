@@ -130,10 +130,11 @@ namespace ControlFood
         }
 
         //Método Consultar dados na tabela
-        public DataTable Consultar()
+        public DataTable Consultar() //Consulta todos os Registros
         {
             this.abrirConexao();
 
+                        
             string mSQL = "Select * from tb_clientes ";
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
@@ -146,6 +147,6 @@ namespace ControlFood
             da.Fill(dt);
             return dt;
 
-        }
+        }        
     }
 }

@@ -26,5 +26,18 @@ namespace ControlFood
         {
 
         }
+
+        private void pcb_Voltar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pcb_Pesquisar_Click(object sender, EventArgs e)
+        {
+            if (rdb_Nome.Checked)
+            {
+                rdb_CPF.Visible = false;
+            }
+        }
     }
 }

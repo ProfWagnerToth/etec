@@ -140,6 +140,7 @@
             this.pcb_Editar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Editar.TabIndex = 2;
             this.pcb_Editar.TabStop = false;
+            this.pcb_Editar.Click += new System.EventHandler(this.pcb_Editar_Click);
             // 
             // pcb_Pesquisar
             // 

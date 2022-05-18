@@ -29,148 +29,152 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Pesquisa));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.gpb_PessoaFisica = new System.Windows.Forms.GroupBox();
+            this.rdb_CPF = new System.Windows.Forms.RadioButton();
+            this.rdb_Nome = new System.Windows.Forms.RadioButton();
+            this.gpb_PessoaJuridica = new System.Windows.Forms.GroupBox();
+            this.rdb_CNPJ = new System.Windows.Forms.RadioButton();
+            this.rdb_RazaoSocial = new System.Windows.Forms.RadioButton();
+            this.gpb_Produtos = new System.Windows.Forms.GroupBox();
+            this.rdb_CodigoProduto = new System.Windows.Forms.RadioButton();
+            this.rdb_CodBarras = new System.Windows.Forms.RadioButton();
+            this.rdb_Descricao = new System.Windows.Forms.RadioButton();
+            this.txt_Pesquisa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pcb_Pesquisar = new System.Windows.Forms.PictureBox();
             this.pcb_Voltar = new System.Windows.Forms.PictureBox();
             this.pcb_Excluir = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdb_NomeFunc = new System.Windows.Forms.RadioButton();
+            this.rdb_CodFuncionario = new System.Windows.Forms.RadioButton();
+            this.gpb_PessoaFisica.SuspendLayout();
+            this.gpb_PessoaJuridica.SuspendLayout();
+            this.gpb_Produtos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Pesquisar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Voltar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Excluir)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gpb_PessoaFisica
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pessoa Física";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gpb_PessoaFisica.Controls.Add(this.rdb_CPF);
+            this.gpb_PessoaFisica.Controls.Add(this.rdb_Nome);
+            this.gpb_PessoaFisica.Location = new System.Drawing.Point(12, 12);
+            this.gpb_PessoaFisica.Name = "gpb_PessoaFisica";
+            this.gpb_PessoaFisica.Size = new System.Drawing.Size(156, 100);
+            this.gpb_PessoaFisica.TabIndex = 0;
+            this.gpb_PessoaFisica.TabStop = false;
+            this.gpb_PessoaFisica.Text = "Clientes";
+            this.gpb_PessoaFisica.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox2
+            // rdb_CPF
             // 
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Location = new System.Drawing.Point(218, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Pessoa Juridica";
+            this.rdb_CPF.AutoSize = true;
+            this.rdb_CPF.Location = new System.Drawing.Point(18, 55);
+            this.rdb_CPF.Name = "rdb_CPF";
+            this.rdb_CPF.Size = new System.Drawing.Size(46, 19);
+            this.rdb_CPF.TabIndex = 1;
+            this.rdb_CPF.TabStop = true;
+            this.rdb_CPF.Text = "CPF";
+            this.rdb_CPF.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // rdb_Nome
             // 
-            this.groupBox3.Controls.Add(this.radioButton7);
-            this.groupBox3.Controls.Add(this.radioButton6);
-            this.groupBox3.Controls.Add(this.radioButton5);
-            this.groupBox3.Location = new System.Drawing.Point(424, 12);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 100);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Produtos";
+            this.rdb_Nome.AutoSize = true;
+            this.rdb_Nome.Location = new System.Drawing.Point(18, 30);
+            this.rdb_Nome.Name = "rdb_Nome";
+            this.rdb_Nome.Size = new System.Drawing.Size(58, 19);
+            this.rdb_Nome.TabIndex = 0;
+            this.rdb_Nome.TabStop = true;
+            this.rdb_Nome.Text = "Nome";
+            this.rdb_Nome.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // gpb_PessoaJuridica
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(18, 30);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nome";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.gpb_PessoaJuridica.Controls.Add(this.rdb_CNPJ);
+            this.gpb_PessoaJuridica.Controls.Add(this.rdb_RazaoSocial);
+            this.gpb_PessoaJuridica.Location = new System.Drawing.Point(336, 12);
+            this.gpb_PessoaJuridica.Name = "gpb_PessoaJuridica";
+            this.gpb_PessoaJuridica.Size = new System.Drawing.Size(156, 100);
+            this.gpb_PessoaJuridica.TabIndex = 1;
+            this.gpb_PessoaJuridica.TabStop = false;
+            this.gpb_PessoaJuridica.Text = "Pessoa Juridica";
             // 
-            // radioButton2
+            // rdb_CNPJ
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(18, 55);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(46, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "CPF";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdb_CNPJ.AutoSize = true;
+            this.rdb_CNPJ.Location = new System.Drawing.Point(18, 56);
+            this.rdb_CNPJ.Name = "rdb_CNPJ";
+            this.rdb_CNPJ.Size = new System.Drawing.Size(52, 19);
+            this.rdb_CNPJ.TabIndex = 1;
+            this.rdb_CNPJ.TabStop = true;
+            this.rdb_CNPJ.Text = "CNPJ";
+            this.rdb_CNPJ.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdb_RazaoSocial
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(18, 31);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(90, 19);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Razão Social";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdb_RazaoSocial.AutoSize = true;
+            this.rdb_RazaoSocial.Location = new System.Drawing.Point(18, 31);
+            this.rdb_RazaoSocial.Name = "rdb_RazaoSocial";
+            this.rdb_RazaoSocial.Size = new System.Drawing.Size(90, 19);
+            this.rdb_RazaoSocial.TabIndex = 0;
+            this.rdb_RazaoSocial.TabStop = true;
+            this.rdb_RazaoSocial.Text = "Razão Social";
+            this.rdb_RazaoSocial.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // gpb_Produtos
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(18, 56);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(52, 19);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "CNPJ";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.gpb_Produtos.Controls.Add(this.rdb_CodigoProduto);
+            this.gpb_Produtos.Controls.Add(this.rdb_CodBarras);
+            this.gpb_Produtos.Controls.Add(this.rdb_Descricao);
+            this.gpb_Produtos.Location = new System.Drawing.Point(498, 12);
+            this.gpb_Produtos.Name = "gpb_Produtos";
+            this.gpb_Produtos.Size = new System.Drawing.Size(156, 100);
+            this.gpb_Produtos.TabIndex = 2;
+            this.gpb_Produtos.TabStop = false;
+            this.gpb_Produtos.Text = "Produtos";
             // 
-            // radioButton5
+            // rdb_CodigoProduto
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(18, 27);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(76, 19);
-            this.radioButton5.TabIndex = 0;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Descrição";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdb_CodigoProduto.AutoSize = true;
+            this.rdb_CodigoProduto.Location = new System.Drawing.Point(18, 50);
+            this.rdb_CodigoProduto.Name = "rdb_CodigoProduto";
+            this.rdb_CodigoProduto.Size = new System.Drawing.Size(110, 19);
+            this.rdb_CodigoProduto.TabIndex = 2;
+            this.rdb_CodigoProduto.TabStop = true;
+            this.rdb_CodigoProduto.Text = "Código Produto";
+            this.rdb_CodigoProduto.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rdb_CodBarras
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(18, 75);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(115, 19);
-            this.radioButton6.TabIndex = 1;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Código de Barras";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rdb_CodBarras.AutoSize = true;
+            this.rdb_CodBarras.Location = new System.Drawing.Point(18, 75);
+            this.rdb_CodBarras.Name = "rdb_CodBarras";
+            this.rdb_CodBarras.Size = new System.Drawing.Size(115, 19);
+            this.rdb_CodBarras.TabIndex = 1;
+            this.rdb_CodBarras.TabStop = true;
+            this.rdb_CodBarras.Text = "Código de Barras";
+            this.rdb_CodBarras.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // rdb_Descricao
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(18, 50);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(110, 19);
-            this.radioButton7.TabIndex = 2;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Código Produto";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.rdb_Descricao.AutoSize = true;
+            this.rdb_Descricao.Location = new System.Drawing.Point(18, 27);
+            this.rdb_Descricao.Name = "rdb_Descricao";
+            this.rdb_Descricao.Size = new System.Drawing.Size(76, 19);
+            this.rdb_Descricao.TabIndex = 0;
+            this.rdb_Descricao.TabStop = true;
+            this.rdb_Descricao.Text = "Descrição";
+            this.rdb_Descricao.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txt_Pesquisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 140);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(518, 23);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txt_Pesquisa.Location = new System.Drawing.Point(12, 140);
+            this.txt_Pesquisa.Name = "txt_Pesquisa";
+            this.txt_Pesquisa.Size = new System.Drawing.Size(518, 23);
+            this.txt_Pesquisa.TabIndex = 3;
+            this.txt_Pesquisa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -190,6 +194,7 @@
             this.pcb_Pesquisar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Pesquisar.TabIndex = 5;
             this.pcb_Pesquisar.TabStop = false;
+            this.pcb_Pesquisar.Click += new System.EventHandler(this.pcb_Pesquisar_Click);
             // 
             // pcb_Voltar
             // 
@@ -200,6 +205,7 @@
             this.pcb_Voltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Voltar.TabIndex = 9;
             this.pcb_Voltar.TabStop = false;
+            this.pcb_Voltar.Click += new System.EventHandler(this.pcb_Voltar_Click);
             // 
             // pcb_Excluir
             // 
@@ -211,30 +217,66 @@
             this.pcb_Excluir.TabIndex = 8;
             this.pcb_Excluir.TabStop = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdb_CodFuncionario);
+            this.groupBox1.Controls.Add(this.rdb_NomeFunc);
+            this.groupBox1.Location = new System.Drawing.Point(174, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(156, 100);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Funcionarios";
+            // 
+            // rdb_NomeFunc
+            // 
+            this.rdb_NomeFunc.AutoSize = true;
+            this.rdb_NomeFunc.Location = new System.Drawing.Point(6, 30);
+            this.rdb_NomeFunc.Name = "rdb_NomeFunc";
+            this.rdb_NomeFunc.Size = new System.Drawing.Size(58, 19);
+            this.rdb_NomeFunc.TabIndex = 0;
+            this.rdb_NomeFunc.TabStop = true;
+            this.rdb_NomeFunc.Text = "Nome";
+            this.rdb_NomeFunc.UseVisualStyleBackColor = true;
+            // 
+            // rdb_CodFuncionario
+            // 
+            this.rdb_CodFuncionario.AutoSize = true;
+            this.rdb_CodFuncionario.Location = new System.Drawing.Point(6, 55);
+            this.rdb_CodFuncionario.Name = "rdb_CodFuncionario";
+            this.rdb_CodFuncionario.Size = new System.Drawing.Size(130, 19);
+            this.rdb_CodFuncionario.TabIndex = 1;
+            this.rdb_CodFuncionario.TabStop = true;
+            this.rdb_CodFuncionario.Text = "Código Funcionario";
+            this.rdb_CodFuncionario.UseVisualStyleBackColor = true;
+            // 
             // frm_Pesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 174);
+            this.ClientSize = new System.Drawing.Size(667, 174);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pcb_Voltar);
             this.Controls.Add(this.pcb_Excluir);
             this.Controls.Add(this.pcb_Pesquisar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txt_Pesquisa);
+            this.Controls.Add(this.gpb_Produtos);
+            this.Controls.Add(this.gpb_PessoaJuridica);
+            this.Controls.Add(this.gpb_PessoaFisica);
             this.Name = "frm_Pesquisa";
             this.Text = "Formulário de Pesquisa";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gpb_PessoaFisica.ResumeLayout(false);
+            this.gpb_PessoaFisica.PerformLayout();
+            this.gpb_PessoaJuridica.ResumeLayout(false);
+            this.gpb_PessoaJuridica.PerformLayout();
+            this.gpb_Produtos.ResumeLayout(false);
+            this.gpb_Produtos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Pesquisar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Voltar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Excluir)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,20 +284,23 @@
 
         #endregion
 
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private GroupBox groupBox3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
-        private RadioButton radioButton7;
-        private RadioButton radioButton6;
-        private RadioButton radioButton5;
-        private TextBox textBox1;
+        private GroupBox gpb_PessoaFisica;
+        private GroupBox gpb_PessoaJuridica;
+        private GroupBox gpb_Produtos;
+        private RadioButton rdb_CPF;
+        private RadioButton rdb_Nome;
+        private RadioButton rdb_CNPJ;
+        private RadioButton rdb_RazaoSocial;
+        private RadioButton rdb_CodigoProduto;
+        private RadioButton rdb_CodBarras;
+        private RadioButton rdb_Descricao;
+        private TextBox txt_Pesquisa;
         private Label label1;
         private PictureBox pcb_Pesquisar;
         private PictureBox pcb_Voltar;
         private PictureBox pcb_Excluir;
+        private GroupBox groupBox1;
+        private RadioButton rdb_CodFuncionario;
+        private RadioButton rdb_NomeFunc;
     }
 }

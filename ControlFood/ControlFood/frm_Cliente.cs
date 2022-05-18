@@ -79,5 +79,12 @@ namespace ControlFood
             gpb_FrmCliente.Visible = false;
             
         }
+
+        private void pcb_Editar_Click(object sender, EventArgs e)
+        {
+            frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
+            newPesquisaCli.Show();
+            
+        }
     }
 }
