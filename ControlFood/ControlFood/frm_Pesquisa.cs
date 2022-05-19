@@ -34,10 +34,61 @@ namespace ControlFood
 
         private void pcb_Pesquisar_Click(object sender, EventArgs e)
         {
+            class_Clientes buscar = new class_Clientes();
+            frm_Cliente form = new frm_Cliente();
+            
             if (rdb_Nome.Checked)
             {
-                rdb_CPF.Visible = false;
+                try
+                {
+                    buscar.setNomeCli(txt_Pesquisa.Text);
+                    form.Show();
+                    form.dataGridView1.DataSource = buscar.ConsultarNome();
+                    
+                    /*
+                    //Alteração dos nomes das colunas do datagridview
+                    dataGridView1.Columns["nomeCli"].HeaderText = "Nome";
+                    dataGridView1.Columns["telCli"].HeaderText = "Código";
+                    dataGridView1.Columns["cidadeCli"].HeaderText = "Sobrenome";
+                    dataGridView1.Columns["ufCli"].HeaderText = "CPF"; */
+
+                }
+                finally
+                {
+                    MessageBox.Show("Busca Realizada com Sucesso!!!");
+
+                }
             }
+            if (rdb_CPF.Checked)
+            {
+                try
+                {
+                    buscar.setCpfCli(txt_Pesquisa.Text);
+                    form.Show();
+                    form.dataGridView1.DataSource = buscar.ConsultarCPF();
+                    
+                    /*
+                    //Alteração dos nomes das colunas do datagridview
+                    dataGridView1.Columns["nomeCli"].HeaderText = "Nome";
+                    dataGridView1.Columns["telCli"].HeaderText = "Código";
+                    dataGridView1.Columns["cidadeCli"].HeaderText = "Sobrenome";
+                    dataGridView1.Columns["ufCli"].HeaderText = "CPF"; */
+
+                }
+                finally
+                {
+                    MessageBox.Show("Busca Realizada com Sucesso!!!");
+
+                }
+            }
+            
+
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

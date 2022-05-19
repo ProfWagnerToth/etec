@@ -147,6 +147,48 @@ namespace ControlFood
             da.Fill(dt);
             return dt;
 
-        }        
+        }
+
+        public DataTable ConsultarNome() //Consulta Nome Cliente
+        {
+            this.abrirConexao();
+            
+            string mSQL = "Select * from tb_clientes where nomeCli like '%" + getNomeCli() +'%'+"'";
+            
+            MessageBox.Show(mSQL);
+
+            MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);           
+
+            this.fecharConexao();          
+            
+            
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+        }
+
+        public DataTable ConsultarCPF() //Consulta CPF CLiente
+        {
+            this.abrirConexao();
+
+            string mSQL = "Select * from tb_clientes where cpfCli like '%" + getCpfCli()+ '%' + "'";
+
+            MessageBox.Show(mSQL);
+
+            MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            this.fecharConexao();
+
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+        }
     }
 }

@@ -387,6 +387,7 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(430, 215);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // frm_Cliente
             // 
@@ -457,6 +458,6 @@
         private Label label2;
         private Label label1;
         private GroupBox groupBox1;
-        private DataGridView dataGridView1;
+        public DataGridView dataGridView1;
     }
 }
