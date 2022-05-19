@@ -19,6 +19,7 @@ namespace ControlFood
 
         private void pcb_Voltar_Click(object sender, EventArgs e)
         {
+            //Retornando o formulário anterior
             frm_Menu newFrm_Menu = new frm_Menu();
             newFrm_Menu.Show();
             Close();
@@ -61,12 +62,14 @@ namespace ControlFood
 
         private void pcb_Inserir_Click(object sender, EventArgs e)
         {
-            gpb_FrmCliente.Visible=true;
-            txtNomeCli.Focus();
+            gpb_FrmCliente.Visible=true; //Deixando o GroupBox referente ao formulário Visivel
+            txtNomeCli.Focus(); //Dando foco na textbox especifica
         }
 
         private void pcb_Cancelar_Click(object sender, EventArgs e)
         {
+            /*Botão Cancelar é utillizado para abortar a operação de inserção indevida, limpando dados inseridos e tornando o GroupBox referente ao cadastro invisivel novamente. */
+
             txtNomeCli.Clear();
             txtCpfCli.Clear();
             txtTelCli.Clear();
@@ -82,6 +85,7 @@ namespace ControlFood
 
         private void pcb_Editar_Click(object sender, EventArgs e)
         {
+            //Chamada do formulário de pesquisa para realizar edição dos dados.
             frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
             newPesquisaCli.Show();
             

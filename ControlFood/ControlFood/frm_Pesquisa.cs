@@ -34,18 +34,27 @@ namespace ControlFood
 
         private void pcb_Pesquisar_Click(object sender, EventArgs e)
         {
-            class_Clientes buscar = new class_Clientes();
-            frm_Cliente form = new frm_Cliente();
+            /* Método de pesquisar através de formulário de pesquisa por nome e por cpf, utilizando a apresentação dos dados em Datagrid pertecente ao formulário Clientes.
+             1. Instanciar a Classe com Objeto especifico para realizar a busca no banco de dados.
+             2. Instanciar o formulário que deseja apresentar as informações dentro do botão de pesquisa.
+             3. Criar Estrutura de decisão para escolha a forma de pesquisa, utilizando um elemento Radio Buttom para seleção do metodo especifico de Pesquisa.
+             4. Criar métodos de pesquisar dentro da Classe especificos para Busca por Nome e por CPF.
+             5. No formulário onde irá aparecer os dados deverá alterar a propriedade do elemento DataGrid no Seção Design -> Modifiers, trocar de Private para Public, desta forma poderá acessar o DataGrid publico de qualquer outro formulário desde que esteja instanciado.
+            */
+
+            class_Clientes buscar = new class_Clientes(); //Instanciamento da Classe
+            frm_Cliente form = new frm_Cliente(); //Instanciamento do Formulario Cliente
             
-            if (rdb_Nome.Checked)
+            if (rdb_Nome.Checked) //Verificando se a opção de pesquisa por esta selecionada
             {
-                try
+                try //rotina de pesquisa no formulário 
                 {
-                    buscar.setNomeCli(txt_Pesquisa.Text);
-                    form.Show();
-                    form.dataGridView1.DataSource = buscar.ConsultarNome();
+                    buscar.setNomeCli(txt_Pesquisa.Text); //Recebe informação da Text para alimentar o método SET e assim utilizar o objeto instaciado
+                    form.Show(); //Abre o formulário para apresentação dos Dados.
+                    form.dataGridView1.DataSource = buscar.ConsultarNome(); //apontamento da Datagrid do formulário instanciado, realizando do método de busca.
+
                     
-                    /*
+                    /* Alterções não Aplicadas no Projeto 
                     //Alteração dos nomes das colunas do datagridview
                     dataGridView1.Columns["nomeCli"].HeaderText = "Nome";
                     dataGridView1.Columns["telCli"].HeaderText = "Código";
@@ -53,9 +62,9 @@ namespace ControlFood
                     dataGridView1.Columns["ufCli"].HeaderText = "CPF"; */
 
                 }
-                finally
+                finally //Conclusão da pesquisa.
                 {
-                    MessageBox.Show("Busca Realizada com Sucesso!!!");
+                    MessageBox.Show("Busca Realizada com Sucesso!!!"); //Menssagem de Busca Realizada com Sucesso ao usuário!
 
                 }
             }
@@ -66,8 +75,8 @@ namespace ControlFood
                     buscar.setCpfCli(txt_Pesquisa.Text);
                     form.Show();
                     form.dataGridView1.DataSource = buscar.ConsultarCPF();
-                    
-                    /*
+
+                    /* Alterções não Aplicadas no Projeto
                     //Alteração dos nomes das colunas do datagridview
                     dataGridView1.Columns["nomeCli"].HeaderText = "Nome";
                     dataGridView1.Columns["telCli"].HeaderText = "Código";

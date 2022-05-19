@@ -117,7 +117,9 @@ namespace ControlFood
 
         //Método Inserir dados na Tabela
         public void inserir()
-        {
+        { /*Inserção de dados no banco de dados preenchidos no formulário de cadastro.
+           String MySQL de inserção de dados na tabela, com utilização de métodos GET para leitura dos campos Text do Formulário. */
+
             string query = "Insert into tb_clientes (nomeCli, cpfCli, telCli, enderecoCli, numCli, bairroCli, cidadeCli, ufCli, cepCli) Values ('" + getNomeCli() + "','" + getCpfCli() + "','" + getTelCli() + "','" + getEnderecoCli() + "','" + getNumCli() + "','" + getBairroCli() + "','" + getCidadeCli() + "','" + getUfCli() + "','" + getCepCli() + "')";
 
             if(this.abrirConexao()==true)
@@ -131,10 +133,11 @@ namespace ControlFood
 
         //Método Consultar dados na tabela
         public DataTable Consultar() //Consulta todos os Registros
+            /*Método de busca de todos os registros no banco de dados, sem a utilização de qualquer parametrização de busca por nome ou cpf, trata-se de uma busca por todos registros existentes no banco de dados.*/
         {
             this.abrirConexao();
 
-                        
+               /*String MySQL de busca por todos registros no banco de dados*/         
             string mSQL = "Select * from tb_clientes ";
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
@@ -150,19 +153,19 @@ namespace ControlFood
         }
 
         public DataTable ConsultarNome() //Consulta Nome Cliente
+            /*Método de Busca selecionado através de um RadioButtom no formulário, para buscar através do nome do cliente.*/
         {
             this.abrirConexao();
             
-            string mSQL = "Select * from tb_clientes where nomeCli like '%" + getNomeCli() +'%'+"'";
-            
-            MessageBox.Show(mSQL);
+            /* String MySQL para busca no banco de dados utilizando o recurso de busca por qualquer parte do dado digitado utilizando o operador LIKE, concatenado com o método GET especifico do campo desejado pela busca. */
+
+            string mSQL = "Select * from tb_clientes where nomeCli like '%" + getNomeCli() +'%'+"'";      
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
 
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);           
 
             this.fecharConexao();          
-            
             
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -174,9 +177,7 @@ namespace ControlFood
         {
             this.abrirConexao();
 
-            string mSQL = "Select * from tb_clientes where cpfCli like '%" + getCpfCli()+ '%' + "'";
-
-            MessageBox.Show(mSQL);
+            string mSQL = "Select * from tb_clientes where cpfCli like '%" + getCpfCli()+ '%' + "'";    
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
 
