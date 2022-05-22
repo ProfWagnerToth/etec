@@ -44,7 +44,8 @@ namespace ControlFood
             
             class_Clientes buscar = new class_Clientes(); //Instanciamento da Classe
             frm_Cliente form = new frm_Cliente(); //Instanciamento do Formulario Cliente
-            
+                       
+
             if (rdb_Nome.Checked) //Verificando se a opção de pesquisa por esta selecionada
             {
                 try //rotina de pesquisa no formulário 
@@ -99,6 +100,12 @@ namespace ControlFood
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void pcb_Excluir_Click(object sender, EventArgs e)
+        {
+            txt_Pesquisa.Clear();
+            txt_Pesquisa.Focus();
         }
     }
 }

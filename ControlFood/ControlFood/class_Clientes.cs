@@ -132,11 +132,11 @@ namespace ControlFood
            String MySQL de inserção de dados na tabela, com utilização de métodos GET para leitura dos campos Text do Formulário. */
 
             string query = "Insert into tb_clientes (nomeCli, cpfCli, telCli, enderecoCli, numCli, bairroCli, cidadeCli, ufCli, cepCli) Values ('" + getNomeCli() + "','" + getCpfCli() + "','" + getTelCli() + "','" + getEnderecoCli() + "','" + getNumCli() + "','" + getBairroCli() + "','" + getCidadeCli() + "','" + getUfCli() + "','" + getCepCli() + "')";
-
+            
             if(this.abrirConexao()==true)
             {
                 MySqlCommand cmd = new MySqlCommand(query, conectar);
-                MessageBox.Show(query);
+                
                 cmd.ExecuteNonQuery();
                 this.fecharConexao();
             }
@@ -149,7 +149,7 @@ namespace ControlFood
             this.abrirConexao();
 
                /*String MySQL de busca por todos registros no banco de dados*/         
-            string mSQL = "Select * from tb_clientes ";
+            string mSQL = "Select codCli as Codigo, nomeCli as Nome, cpfCli as CPF, telCli as Telefone, enderecoCli as Endereco, numCli as Numero, bairroCli as Bairro, cidadeCli as Cidade, ufCli as Estado, cepCli as CEP from tb_clientes ";
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
 
@@ -170,7 +170,7 @@ namespace ControlFood
             
             /* String MySQL para busca no banco de dados utilizando o recurso de busca por qualquer parte do dado digitado utilizando o operador LIKE, concatenado com o método GET especifico do campo desejado pela busca. */
 
-            string mSQL = "Select * from tb_clientes where nomeCli like '%" + getNomeCli() +'%'+"'";      
+            string mSQL = "Select codCli as Codigo, nomeCli as Nome, cpfCli as CPF, telCli as Telefone, enderecoCli as Endereco, numCli as Numero, bairroCli as Bairro, cidadeCli as Cidade, ufCli as Estado, cepCli as CEP from tb_clientes where nomeCli like '%" + getNomeCli() +'%'+"'";      
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
 
@@ -188,7 +188,7 @@ namespace ControlFood
         {
             this.abrirConexao();
 
-            string mSQL = "Select * from tb_clientes where cpfCli like '%" + getCpfCli()+ '%' + "'";    
+            string mSQL = "Select codCli as Codigo, nomeCli as Nome, cpfCli as CPF, telCli as Telefone, enderecoCli as Endereco, numCli as Numero, bairroCli as Bairro, cidadeCli as Cidade, ufCli as Estado, cepCli as CEP from tb_clientes where cpfCli like '%" + getCpfCli()+ '%' + "'";    
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
 
@@ -207,7 +207,7 @@ namespace ControlFood
         {
             this.abrirConexao();
 
-            string mSQL = "Select * from tb_clientes where codCli ='" + getCodCli() + "'";         
+            string mSQL = "Select nomeCli as Nome, cpfCli as CPF, enderecoCli as Endereço,numCli as Numero, bairroCli as Bairro, cidadeCli as Cidade, ufCli as Estado from tb_clientes where codCli ='" + getCodCli() + "'";         
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
 
@@ -225,7 +225,7 @@ namespace ControlFood
         public void alterar()
         {
             string query = "UPDATE tb_clientes SET nomeCli ='" + getNomeCli() + "', cpfCli = '" + getCpfCli() + "', telCli = '" + getTelCli() + "', enderecoCli = '" + getEnderecoCli() + "', numCli = '" + getNumCli() + "', bairroCli = '" + getBairroCli() + "', cidadeCli = '" + getCidadeCli() + "', ufCli = '" +getUfCli() + "', cepCli = '" + getCepCli() + "'  WHERE codCli = '" + getCodCli() + "'";
-            MessageBox.Show(query);
+           
 
             if (this.abrirConexao() == true)
             {

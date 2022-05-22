@@ -33,7 +33,7 @@ namespace ControlFood
             try
             {
                 newCli.setNomeCli(txtNomeCli.Text);
-                newCli.setCpfCli(txtCpfCli.Text);
+                newCli.setCpfCli(Convert.ToString(txtCpfCli.Text));
                 newCli.setTelCli(txtTelCli.Text);
                 newCli.setEnderecoCli(txtEnderecoCli.Text);
                 newCli.setNumCli(Int32.Parse(txtNumCli.Text));
@@ -47,6 +47,7 @@ namespace ControlFood
             finally
             {
                 MessageBox.Show("Registro Inserido com Sucesso!!!");
+                //Limpeza dos Campos Preenchidos
                 txtNomeCli.Clear();
                 txtCpfCli.Clear();
                 txtTelCli.Clear();
@@ -89,77 +90,97 @@ namespace ControlFood
             frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
             newPesquisaCli.Show();
 
+            /*Controle de visualização de radioButton para pesquisas personalizadas conforme o módulo acessado. */
+            newPesquisaCli.rdb_Nome.Visible = true;
+            newPesquisaCli.rdb_CPF.Visible = true;
+            newPesquisaCli.rdb_NomeFunc.Visible = false;
+            newPesquisaCli.rdb_CodFuncionario.Visible = false;
+            newPesquisaCli.rdb_CNPJ.Visible = false;
+            newPesquisaCli.rdb_RazaoSocial.Visible = false;
+            newPesquisaCli.rdb_CodigoProduto.Visible = false;
+            newPesquisaCli.rdb_CodBarras.Visible = false;
+            newPesquisaCli.rdb_Descricao.Visible = false;
+            newPesquisaCli.txt_Pesquisa.Focus();
             
+
         }
 
         class_Clientes cadCli = new class_Clientes();
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int nomeCli = dataGridView1.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[nomeCli];
-            string codigo = Convert.ToString(selectedRow.Cells["codCli"].Value);
-            string nome = Convert.ToString(selectedRow.Cells["nomeCli"].Value);
-            string cpf = Convert.ToString(selectedRow.Cells["cpfCli"].Value);
-            string telefone = Convert.ToString(selectedRow.Cells["telCli"].Value);
-            string endereco = Convert.ToString(selectedRow.Cells["enderecoCli"].Value);
-            string numero = Convert.ToString(selectedRow.Cells["numCli"].Value);
-            string bairro = Convert.ToString(selectedRow.Cells["bairroCli"].Value);
-            string cidade = Convert.ToString(selectedRow.Cells["cidadeCli"].Value);
-            string uf = Convert.ToString(selectedRow.Cells["ufCli"].Value);
-            string cep = Convert.ToString(selectedRow.Cells["cepCli"].Value);
+            //Criação de variaveis para obtenção de dados do Banco de Dados Clicando direto na Datagrid do formulario.
+            int codigoCli = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[codigoCli];
+            string codigoCliente = Convert.ToString(selectedRow.Cells["codigo"].Value);
+            string nomeCliente = Convert.ToString(selectedRow.Cells["nome"].Value);
+            string cpfCliente = Convert.ToString(selectedRow.Cells["cpf"].Value);
+            string telefoneCliente = Convert.ToString(selectedRow.Cells["telefone"].Value);
+            string enderecoCliente = Convert.ToString(selectedRow.Cells["endereco"].Value);
+            string numeroCliente = Convert.ToString(selectedRow.Cells["numero"].Value);
+            string bairroCliente = Convert.ToString(selectedRow.Cells["bairro"].Value);
+            string cidadeCliente = Convert.ToString(selectedRow.Cells["cidade"].Value);
+            string ufCliente = Convert.ToString(selectedRow.Cells["Estado"].Value);
+            string cepCliente = Convert.ToString(selectedRow.Cells["cep"].Value);
 
+            //Controle de vizualização de botões do formulário
             gpb_FrmCliente.Visible = true;
             pcb_Edicao.Visible = true;
             pcb_Confirmar.Visible = false;
+            pcb_Exclusao.Visible = true;
             lbl_CodigoTag.Visible=true;
             lbl_codCli.Visible = true;
+           
+            //Passando dados das variaveis para os campos do formulário
+            lbl_codCli.Text = codigoCliente;
+            txtNomeCli.Text = nomeCliente;
+            txtCpfCli.Text = cpfCliente;
+            txtTelCli.Text = telefoneCliente;
+            txtEnderecoCli.Text = enderecoCliente;
+            txtNumCli.Text = numeroCliente;
+            txtBairroCli.Text = bairroCliente;
+            txtCidadeCli.Text = cidadeCliente;
+            txtUfCli.Text = ufCliente;
+            txtCepCli.Text = cepCliente;
 
-            lbl_codCli.Text = codigo;
-            txtNomeCli.Text = nome;
-            txtCpfCli.Text = cpf;
-            txtTelCli.Text = telefone;
-            txtEnderecoCli.Text = endereco;
-            txtNumCli.Text = numero;
-            txtBairroCli.Text = bairro;
-            txtCidadeCli.Text = cidade;
-            txtUfCli.Text = uf;
-            txtCepCli.Text = cep;
-
-            
-            cadCli.setCodCli(Int32.Parse(codigo));
-            cadCli.setNomeCli(nome);
-            cadCli.setCpfCli(cpf);
-            cadCli.setTelCli(telefone);
-            cadCli.setEnderecoCli(endereco);
-            cadCli.setNumCli(Int32.Parse(numero));
-            cadCli.setBairroCli(bairro);
-            cadCli.setCidadeCli(cidade);
-            cadCli.setufCli(uf);
-            cadCli.setCepCli(cep);        
+            //Recebendo dados pelo método SET
+            cadCli.setCodCli(Int32.Parse(codigoCliente));
+            cadCli.setNomeCli(nomeCliente);
+            cadCli.setCpfCli(cpfCliente);
+            cadCli.setTelCli(telefoneCliente);
+            cadCli.setEnderecoCli(enderecoCliente);
+            cadCli.setNumCli(Int32.Parse(numeroCliente));
+            cadCli.setBairroCli(bairroCliente);
+            cadCli.setCidadeCli(cidadeCliente);
+            cadCli.setufCli(ufCliente);
+            cadCli.setCepCli(cepCliente);        
 
         }
 
         private void pcb_Edicao_Click(object sender, EventArgs e)
         {
-            try
+            //Mensagem de Confirmação de Ação
+            if (MessageBox.Show("Deseja ALTERAR os dados do Registro?", "CONFIRMAÇÃO DE EDIÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                cadCli.setNomeCli(txtNomeCli.Text);
-                cadCli.setCpfCli(txtCpfCli.Text);
-                cadCli.setTelCli(txtCpfCli.Text);
-                cadCli.setEnderecoCli(txtEnderecoCli.Text);
-                cadCli.setNumCli(Int32.Parse(txtNumCli.Text));
-                cadCli.setBairroCli(txtBairroCli.Text);
-                cadCli.setCidadeCli(txtCidadeCli.Text);
-                cadCli.setufCli(txtUfCli.Text);
-                cadCli.setCepCli(txtCepCli.Text);
-                cadCli.alterar();
-                dataGridView1.DataSource = cadCli.ConsultarCodCli();
-            }
+                try
+                {
+                    cadCli.setNomeCli(txtNomeCli.Text);
+                    cadCli.setCpfCli(txtCpfCli.Text);
+                    cadCli.setTelCli(txtCpfCli.Text);
+                    cadCli.setEnderecoCli(txtEnderecoCli.Text);
+                    cadCli.setNumCli(Int32.Parse(txtNumCli.Text));
+                    cadCli.setBairroCli(txtBairroCli.Text);
+                    cadCli.setCidadeCli(txtCidadeCli.Text);
+                    cadCli.setufCli(txtUfCli.Text);
+                    cadCli.setCepCli(txtCepCli.Text);
+                    cadCli.alterar();
+                    dataGridView1.DataSource = cadCli.ConsultarCodCli();
+                }
 
-            finally
-            {
-                MessageBox.Show("Informações alteradas com sucesso");
-            }
+                finally
+                {
+                    MessageBox.Show("Informações alteradas com sucesso");
+                }
+            }            
         }
 
         private void pcb_Pesquisar_Click(object sender, EventArgs e)
@@ -167,6 +188,18 @@ namespace ControlFood
             //Chamada do formulário de pesquisa para realizar edição dos dados.
             frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
             newPesquisaCli.Show();
+
+            /*Controle de visualização de radioButton para pesquisas personalizadas conforme o módulo acessado. */
+            newPesquisaCli.rdb_Nome.Visible = true;
+            newPesquisaCli.rdb_CPF.Visible = true;
+            newPesquisaCli.rdb_NomeFunc.Visible = false;
+            newPesquisaCli.rdb_CodFuncionario.Visible = false;
+            newPesquisaCli.rdb_CNPJ.Visible = false;
+            newPesquisaCli.rdb_RazaoSocial.Visible = false;
+            newPesquisaCli.rdb_CodigoProduto.Visible = false;
+            newPesquisaCli.rdb_CodBarras.Visible = false;
+            newPesquisaCli.rdb_Descricao.Visible = false;
+            newPesquisaCli.txt_Pesquisa.Focus();
         }
 
         private void pcb_Excluir_Click(object sender, EventArgs e)
@@ -174,36 +207,156 @@ namespace ControlFood
             //Chamada do formulário de pesquisa para realizar edição dos dados.
             frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
             newPesquisaCli.Show();
+
+            /*Controle de visualização de radioButton para pesquisas personalizadas conforme o módulo acessado. */
+            newPesquisaCli.rdb_Nome.Visible = true;
+            newPesquisaCli.rdb_CPF.Visible = true;
+            newPesquisaCli.rdb_NomeFunc.Visible = false;
+            newPesquisaCli.rdb_CodFuncionario.Visible = false;
+            newPesquisaCli.rdb_CNPJ.Visible = false;
+            newPesquisaCli.rdb_RazaoSocial.Visible = false;
+            newPesquisaCli.rdb_CodigoProduto.Visible = false;
+            newPesquisaCli.rdb_CodBarras.Visible = false;
+            newPesquisaCli.rdb_Descricao.Visible = false;
+            newPesquisaCli.txt_Pesquisa.Focus();
         }
 
         private void pcb_Exclusao_Click(object sender, EventArgs e)
         {
-            try
+            //Mensagem de Confirmação de Ação
+            if (MessageBox.Show(" Deseja realmente EXCLUIR o REGISTRO? ", "CONFIRMAÇÃO DE EXCLUSÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                cadCli.setCodCli(Int32.Parse(lbl_codCli.Text));
-                cadCli.excluir();                
-                dataGridView1.DataSource = cadCli.Consultar();
-                pcb_Edicao.Visible = false;
-                pcb_Exclusao.Visible = false;
-                pcb_Confirmar.Visible = true;
-                lbl_CodigoTag.Visible = false;
-                lbl_codCli.Visible = false;
-                txtNomeCli.Clear();
-                txtCpfCli.Clear();
-                txtTelCli.Clear();
-                txtEnderecoCli.Clear();
-                txtNumCli.Clear();
-                txtBairroCli.Clear();
-                txtCidadeCli.Clear();
-                txtUfCli.Clear();
-                txtCepCli.Clear();
-                txtNomeCli.Focus();
-            }
+                try
+                {
+                    cadCli.setCodCli(Int32.Parse(lbl_codCli.Text));
+                    cadCli.excluir();
+                    dataGridView1.DataSource = cadCli.Consultar();
+                    pcb_Edicao.Visible = false;
+                    pcb_Exclusao.Visible = false;
+                    pcb_Confirmar.Visible = true;
+                    lbl_CodigoTag.Visible = false;
+                    lbl_codCli.Visible = false;
+                    txtNomeCli.Clear();
+                    txtCpfCli.Clear();
+                    txtTelCli.Clear();
+                    txtEnderecoCli.Clear();
+                    txtNumCli.Clear();
+                    txtBairroCli.Clear();
+                    txtCidadeCli.Clear();
+                    txtUfCli.Clear();
+                    txtCepCli.Clear();
+                    txtNomeCli.Focus();
+                }
 
-            finally
-            {
-                MessageBox.Show("Informações excluídas com sucesso");
+                finally
+                {
+                    MessageBox.Show("Informações excluídas com sucesso");
+                }
             }
+        }
+
+        private void adicionarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gpb_FrmCliente.Visible = true; //Deixando o GroupBox referente ao formulário Visivel
+            txtNomeCli.Focus(); //Dando foco na textbox especifica
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
+            newPesquisaCli.Show();
+
+            /*Controle de visualização de radioButton para pesquisas personalizadas conforme o módulo acessado. */
+            newPesquisaCli.rdb_Nome.Visible = true;
+            newPesquisaCli.rdb_CPF.Visible = true;
+            newPesquisaCli.rdb_NomeFunc.Visible = false;
+            newPesquisaCli.rdb_CodFuncionario.Visible = false;
+            newPesquisaCli.rdb_CNPJ.Visible = false;
+            newPesquisaCli.rdb_RazaoSocial.Visible = false;
+            newPesquisaCli.rdb_CodigoProduto.Visible = false;
+            newPesquisaCli.rdb_CodBarras.Visible = false;
+            newPesquisaCli.rdb_Descricao.Visible = false;
+            newPesquisaCli.txt_Pesquisa.Focus();
+        }
+
+        private void pesquisarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
+            newPesquisaCli.Show();
+
+            /*Controle de visualização de radioButton para pesquisas personalizadas conforme o módulo acessado. */
+            newPesquisaCli.rdb_Nome.Visible = true;
+            newPesquisaCli.rdb_CPF.Visible = true;
+            newPesquisaCli.rdb_NomeFunc.Visible = false;
+            newPesquisaCli.rdb_CodFuncionario.Visible = false;
+            newPesquisaCli.rdb_CNPJ.Visible = false;
+            newPesquisaCli.rdb_RazaoSocial.Visible = false;
+            newPesquisaCli.rdb_CodigoProduto.Visible = false;
+            newPesquisaCli.rdb_CodBarras.Visible = false;
+            newPesquisaCli.rdb_Descricao.Visible = false;
+            newPesquisaCli.txt_Pesquisa.Focus();
+        }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
+            newPesquisaCli.Show();
+
+            /*Controle de visualização de radioButton para pesquisas personalizadas conforme o módulo acessado. */
+            newPesquisaCli.rdb_Nome.Visible = true;
+            newPesquisaCli.rdb_CPF.Visible = true;
+            newPesquisaCli.rdb_NomeFunc.Visible = false;
+            newPesquisaCli.rdb_CodFuncionario.Visible = false;
+            newPesquisaCli.rdb_CNPJ.Visible = false;
+            newPesquisaCli.rdb_RazaoSocial.Visible = false;
+            newPesquisaCli.rdb_CodigoProduto.Visible = false;
+            newPesquisaCli.rdb_CodBarras.Visible = false;
+            newPesquisaCli.rdb_Descricao.Visible = false;
+            newPesquisaCli.txt_Pesquisa.Focus();
+        }
+
+        private void txtCpfCli_TextChanged(object sender, EventArgs e)
+        {
+            /*
+            string CPF = txtCpfCli.Text;                
+            string CPFFormatado = String.Format(@"{0:\000\.000\.000\-00}", CPF);
+            txtCpfCli.Text = CPFFormatado;*/
+        }
+
+        private void txtCpfCli_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void txtCpfCli_Leave(object sender, EventArgs e)
+        {
+            /* 
+            Aplicação de Mascara ao CPF
+            1. Ative a o Evento Focus -> Leave da sua TextBox
+            2. Crie uma variavel para receber o valor digitado em sua TextBox
+            3. Converta o valor da TextBox em Numero 
+            4. Aplique a mascara que deseja 
+            5. Retorne o valor da variavel para sua textbox agora com a mascara.
+            */
+
+            long numCPFtxt = long.Parse(txtCpfCli.Text);            
+            string strMascara = string.Format(@"{0:000\.000\.000\-00}",numCPFtxt); 
+            string cpfMascara = Convert.ToString(string.Format(strMascara, numCPFtxt));           
+            txtCpfCli.Text = cpfMascara;   
+        }
+
+        private void txtTelCli_Leave(object sender, EventArgs e)
+        {
+            long numTeltxt = long.Parse(txtTelCli.Text);
+            string strMascara = string.Format(@"{0:(00)00000-0000}", numTeltxt);
+            txtTelCli.Text =Convert.ToString(string.Format(strMascara, numTeltxt));
+        }
+
+        private void txtCepCli_Leave(object sender, EventArgs e)
+        {
+            long numCEPtxt = long.Parse(txtCepCli.Text);
+            string strMascara = string.Format(@"{0:00\.000\-000}", numCEPtxt);
+            txtCepCli.Text = Convert.ToString(string.Format(strMascara, numCEPtxt));
         }
     }
 }

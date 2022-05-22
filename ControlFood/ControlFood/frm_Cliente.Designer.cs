@@ -43,6 +43,7 @@
             this.pcb_Cancelar = new System.Windows.Forms.PictureBox();
             this.pcb_Voltar = new System.Windows.Forms.PictureBox();
             this.gpb_FrmCliente = new System.Windows.Forms.GroupBox();
+            this.txtCpfCli = new System.Windows.Forms.TextBox();
             this.pcb_Exclusao = new System.Windows.Forms.PictureBox();
             this.pcb_Edicao = new System.Windows.Forms.PictureBox();
             this.lbl_codCli = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.txtNumCli = new System.Windows.Forms.TextBox();
             this.txtEnderecoCli = new System.Windows.Forms.TextBox();
             this.txtTelCli = new System.Windows.Forms.TextBox();
-            this.txtCpfCli = new System.Windows.Forms.TextBox();
             this.txtNomeCli = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -101,24 +101,28 @@
             this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
             this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.adicionarToolStripMenuItem.Text = "Adicionar";
+            this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.adicionarToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // pesquisarToolStripMenuItem
             // 
             this.pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
             this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.pesquisarToolStripMenuItem.Text = "Pesquisar";
+            this.pesquisarToolStripMenuItem.Click += new System.EventHandler(this.pesquisarToolStripMenuItem_Click);
             // 
             // excluirToolStripMenuItem
             // 
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
             this.excluirToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.excluirToolStripMenuItem.Text = "Excluir";
+            this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
             // 
             // voltarAoMenuToolStripMenuItem
             // 
@@ -205,6 +209,7 @@
             // 
             // gpb_FrmCliente
             // 
+            this.gpb_FrmCliente.Controls.Add(this.txtCpfCli);
             this.gpb_FrmCliente.Controls.Add(this.pcb_Exclusao);
             this.gpb_FrmCliente.Controls.Add(this.pcb_Edicao);
             this.gpb_FrmCliente.Controls.Add(this.lbl_codCli);
@@ -218,7 +223,6 @@
             this.gpb_FrmCliente.Controls.Add(this.txtNumCli);
             this.gpb_FrmCliente.Controls.Add(this.txtEnderecoCli);
             this.gpb_FrmCliente.Controls.Add(this.txtTelCli);
-            this.gpb_FrmCliente.Controls.Add(this.txtCpfCli);
             this.gpb_FrmCliente.Controls.Add(this.txtNomeCli);
             this.gpb_FrmCliente.Controls.Add(this.label9);
             this.gpb_FrmCliente.Controls.Add(this.label8);
@@ -237,6 +241,18 @@
             this.gpb_FrmCliente.Text = "Ficha Cliente";
             this.gpb_FrmCliente.Visible = false;
             // 
+            // txtCpfCli
+            // 
+            this.txtCpfCli.Location = new System.Drawing.Point(55, 45);
+            this.txtCpfCli.Name = "txtCpfCli";
+            this.txtCpfCli.PlaceholderText = "999.999.999-99";
+            this.txtCpfCli.Size = new System.Drawing.Size(112, 23);
+            this.txtCpfCli.TabIndex = 2;
+            this.txtCpfCli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCpfCli.TextChanged += new System.EventHandler(this.txtCpfCli_TextChanged);
+            this.txtCpfCli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpfCli_KeyPress);
+            this.txtCpfCli.Leave += new System.EventHandler(this.txtCpfCli_Leave);
+            // 
             // pcb_Exclusao
             // 
             this.pcb_Exclusao.Image = ((System.Drawing.Image)(resources.GetObject("pcb_Exclusao.Image")));
@@ -246,6 +262,7 @@
             this.pcb_Exclusao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Exclusao.TabIndex = 21;
             this.pcb_Exclusao.TabStop = false;
+            this.pcb_Exclusao.Visible = false;
             this.pcb_Exclusao.Click += new System.EventHandler(this.pcb_Exclusao_Click);
             // 
             // pcb_Edicao
@@ -287,64 +304,67 @@
             // 
             this.txtCepCli.Location = new System.Drawing.Point(43, 172);
             this.txtCepCli.Name = "txtCepCli";
+            this.txtCepCli.PlaceholderText = "99.999-999";
             this.txtCepCli.Size = new System.Drawing.Size(124, 23);
-            this.txtCepCli.TabIndex = 17;
+            this.txtCepCli.TabIndex = 9;
+            this.txtCepCli.Leave += new System.EventHandler(this.txtCepCli_Leave);
             // 
             // txtUfCli
             // 
             this.txtUfCli.Location = new System.Drawing.Point(241, 143);
             this.txtUfCli.Name = "txtUfCli";
+            this.txtUfCli.PlaceholderText = "Insira Estado";
             this.txtUfCli.Size = new System.Drawing.Size(83, 23);
-            this.txtUfCli.TabIndex = 16;
+            this.txtUfCli.TabIndex = 8;
             // 
             // txtCidadeCli
             // 
             this.txtCidadeCli.Location = new System.Drawing.Point(64, 143);
             this.txtCidadeCli.Name = "txtCidadeCli";
+            this.txtCidadeCli.PlaceholderText = "Insira Cidade";
             this.txtCidadeCli.Size = new System.Drawing.Size(141, 23);
-            this.txtCidadeCli.TabIndex = 15;
+            this.txtCidadeCli.TabIndex = 7;
             // 
             // txtBairroCli
             // 
             this.txtBairroCli.Location = new System.Drawing.Point(173, 114);
             this.txtBairroCli.Name = "txtBairroCli";
+            this.txtBairroCli.PlaceholderText = "Insira o Bairro";
             this.txtBairroCli.Size = new System.Drawing.Size(151, 23);
-            this.txtBairroCli.TabIndex = 14;
+            this.txtBairroCli.TabIndex = 6;
             // 
             // txtNumCli
             // 
             this.txtNumCli.Location = new System.Drawing.Point(71, 111);
             this.txtNumCli.Name = "txtNumCli";
+            this.txtNumCli.PlaceholderText = "999";
             this.txtNumCli.Size = new System.Drawing.Size(49, 23);
-            this.txtNumCli.TabIndex = 13;
+            this.txtNumCli.TabIndex = 5;
             // 
             // txtEnderecoCli
             // 
             this.txtEnderecoCli.Location = new System.Drawing.Point(71, 77);
             this.txtEnderecoCli.Name = "txtEnderecoCli";
+            this.txtEnderecoCli.PlaceholderText = "Insira o Endereço";
             this.txtEnderecoCli.Size = new System.Drawing.Size(253, 23);
-            this.txtEnderecoCli.TabIndex = 12;
+            this.txtEnderecoCli.TabIndex = 4;
             // 
             // txtTelCli
             // 
             this.txtTelCli.Location = new System.Drawing.Point(211, 45);
             this.txtTelCli.Name = "txtTelCli";
+            this.txtTelCli.PlaceholderText = "(99)99999-1234";
             this.txtTelCli.Size = new System.Drawing.Size(113, 23);
-            this.txtTelCli.TabIndex = 11;
-            // 
-            // txtCpfCli
-            // 
-            this.txtCpfCli.Location = new System.Drawing.Point(55, 45);
-            this.txtCpfCli.Name = "txtCpfCli";
-            this.txtCpfCli.Size = new System.Drawing.Size(115, 23);
-            this.txtCpfCli.TabIndex = 10;
+            this.txtTelCli.TabIndex = 3;
+            this.txtTelCli.Leave += new System.EventHandler(this.txtTelCli_Leave);
             // 
             // txtNomeCli
             // 
             this.txtNomeCli.Location = new System.Drawing.Point(55, 16);
             this.txtNomeCli.Name = "txtNomeCli";
+            this.txtNomeCli.PlaceholderText = "Insira o Nome do Cliente";
             this.txtNomeCli.Size = new System.Drawing.Size(269, 23);
-            this.txtNomeCli.TabIndex = 9;
+            this.txtNomeCli.TabIndex = 1;
             // 
             // label9
             // 
@@ -510,7 +530,6 @@
         private TextBox txtNumCli;
         private TextBox txtEnderecoCli;
         private TextBox txtTelCli;
-        private TextBox txtCpfCli;
         private TextBox txtNomeCli;
         private Label label9;
         private Label label8;
@@ -527,5 +546,6 @@
         private Label lbl_codCli;
         private Label lbl_CodigoTag;
         private PictureBox pcb_Exclusao;
+        private TextBox txtCpfCli;
     }
 }

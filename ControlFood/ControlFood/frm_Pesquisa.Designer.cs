@@ -81,12 +81,14 @@
             // 
             // rdb_Nome
             // 
+            this.rdb_Nome.AccessibleDescription = "";
             this.rdb_Nome.AutoSize = true;
             this.rdb_Nome.Location = new System.Drawing.Point(18, 30);
             this.rdb_Nome.Name = "rdb_Nome";
             this.rdb_Nome.Size = new System.Drawing.Size(58, 19);
             this.rdb_Nome.TabIndex = 0;
             this.rdb_Nome.TabStop = true;
+            this.rdb_Nome.Tag = "busca por nome";
             this.rdb_Nome.Text = "Nome";
             this.rdb_Nome.UseVisualStyleBackColor = true;
             // 
@@ -216,6 +218,7 @@
             this.pcb_Excluir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Excluir.TabIndex = 8;
             this.pcb_Excluir.TabStop = false;
+            this.pcb_Excluir.Click += new System.EventHandler(this.pcb_Excluir_Click);
             // 
             // groupBox1
             // 
@@ -265,7 +268,7 @@
             this.Controls.Add(this.gpb_PessoaJuridica);
             this.Controls.Add(this.gpb_PessoaFisica);
             this.Name = "frm_Pesquisa";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário de Pesquisa";
             this.gpb_PessoaFisica.ResumeLayout(false);
             this.gpb_PessoaFisica.PerformLayout();
@@ -288,20 +291,20 @@
         private GroupBox gpb_PessoaFisica;
         private GroupBox gpb_PessoaJuridica;
         private GroupBox gpb_Produtos;
-        private RadioButton rdb_CPF;
-        private RadioButton rdb_Nome;
-        private RadioButton rdb_CNPJ;
-        private RadioButton rdb_RazaoSocial;
-        private RadioButton rdb_CodigoProduto;
-        private RadioButton rdb_CodBarras;
-        private RadioButton rdb_Descricao;
-        private TextBox txt_Pesquisa;
         private Label label1;
         private PictureBox pcb_Pesquisar;
         private PictureBox pcb_Voltar;
         private PictureBox pcb_Excluir;
         private GroupBox groupBox1;
-        private RadioButton rdb_CodFuncionario;
-        private RadioButton rdb_NomeFunc;
+        public RadioButton rdb_CPF;
+        public RadioButton rdb_Nome;
+        public RadioButton rdb_CodFuncionario;
+        public RadioButton rdb_NomeFunc;
+        public RadioButton rdb_CNPJ;
+        public RadioButton rdb_RazaoSocial;
+        public RadioButton rdb_CodigoProduto;
+        public RadioButton rdb_CodBarras;
+        public RadioButton rdb_Descricao;
+        public TextBox txt_Pesquisa;
     }
 }
