@@ -39,7 +39,6 @@
             this.rdb_CodigoProduto = new System.Windows.Forms.RadioButton();
             this.rdb_CodBarras = new System.Windows.Forms.RadioButton();
             this.rdb_Descricao = new System.Windows.Forms.RadioButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txt_Pesquisa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pcb_Pesquisar = new System.Windows.Forms.PictureBox();
@@ -51,7 +50,6 @@
             this.gpb_PessoaFisica.SuspendLayout();
             this.gpb_PessoaJuridica.SuspendLayout();
             this.gpb_Produtos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Pesquisar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Voltar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Excluir)).BeginInit();
@@ -170,17 +168,6 @@
             this.rdb_Descricao.Text = "Descrição";
             this.rdb_Descricao.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 171);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 113);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // txt_Pesquisa
             // 
             this.txt_Pesquisa.Location = new System.Drawing.Point(12, 140);
@@ -267,8 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 296);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(668, 176);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pcb_Voltar);
             this.Controls.Add(this.pcb_Excluir);
@@ -286,7 +272,6 @@
             this.gpb_PessoaJuridica.PerformLayout();
             this.gpb_Produtos.ResumeLayout(false);
             this.gpb_Produtos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Pesquisar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Voltar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Excluir)).EndInit();
@@ -317,6 +302,5 @@
         private GroupBox groupBox1;
         private RadioButton rdb_CodFuncionario;
         private RadioButton rdb_NomeFunc;
-        private DataGridView dataGridView1;
     }
 }

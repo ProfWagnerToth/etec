@@ -12,6 +12,7 @@ namespace ControlFood
     internal class class_Clientes : Conexao
     {
         //Declaração de Variáveis privadas para uso na classe
+        private int codCli;
         private string nomeCli;
         private string cpfCli;
         private string telCli;
@@ -23,6 +24,16 @@ namespace ControlFood
         private string cepCli;
 
         // Retornos Set (sem retornos) e Get (com retornos)
+
+        public void setCodCli(int codigo)
+        {
+            this.codCli = codigo;
+        }
+
+        public int getCodCli()
+        {
+            return this.codCli;
+        }
         public void setNomeCli (string nome)
         {
             this.nomeCli = nome;

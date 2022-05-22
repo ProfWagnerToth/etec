@@ -91,10 +91,48 @@ namespace ControlFood
             
         }
 
+        class_Clientes cadCli = new class_Clientes();
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int nomeCli = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[nomeCli];
+            string codigo = Convert.ToString(selectedRow.Cells["codCli"].Value);
+            string nome = Convert.ToString(selectedRow.Cells["nomeCli"].Value);
+            string cpf = Convert.ToString(selectedRow.Cells["cpfCli"].Value);
+            string telefone = Convert.ToString(selectedRow.Cells["telCli"].Value);
+            string endereco = Convert.ToString(selectedRow.Cells["enderecoCli"].Value);
+            string numero = Convert.ToString(selectedRow.Cells["numCli"].Value);
+            string bairro = Convert.ToString(selectedRow.Cells["bairroCli"].Value);
+            string cidade = Convert.ToString(selectedRow.Cells["cidadeCli"].Value);
+            string uf = Convert.ToString(selectedRow.Cells["ufCli"].Value);
+            string cep = Convert.ToString(selectedRow.Cells["cepCli"].Value);
+
+            gpb_FrmCliente.Visible = true;
+
+            txtNomeCli.Text = nome;
+            txtCpfCli.Text = cpf;
+            txtTelCli.Text = telefone;
+            txtEnderecoCli.Text = endereco;
+            txtNumCli.Text = numero;
+            txtBairroCli.Text = bairro;
+            txtCidadeCli.Text = cidade;
+            txtUfCli.Text = uf;
+            txtCepCli.Text = cep;
+
+            cadCli.setCodCli(Int32.Parse(codigo));
+            cadCli.setNomeCli(nome);
+            cadCli.setCpfCli(cpf);
+            cadCli.setTelCli(telefone);
+            cadCli.setEnderecoCli(endereco);
+            cadCli.setNumCli(Int32.Parse(numero));
+            cadCli.setBairroCli(bairro);
+            cadCli.setCidadeCli(cidade);
+            cadCli.setufCli(uf);
+            cadCli.setCepCli(cep);
+
+
             
-            
+
         }
     }
 }
