@@ -202,5 +202,48 @@ namespace ControlFood
             return dt;
 
         }
+
+        public DataTable ConsultarCodCli() //Consulta Código CLiente
+        {
+            this.abrirConexao();
+
+            string mSQL = "Select * from tb_clientes where codCli ='" + getCodCli() + "'";         
+
+            MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            this.fecharConexao();
+
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+        }
+
+        public void alterar()
+        {
+            string query = "UPDATE tb_clientes SET nomeCli ='" + getNomeCli() + "', cpfCli = '" + getCpfCli() + "', telCli = '" + getTelCli() + "', enderecoCli = '" + getEnderecoCli() + "', numCli = '" + getNumCli() + "', bairroCli = '" + getBairroCli() + "', cidadeCli = '" + getCidadeCli() + "', ufCli = '" +getUfCli() + "', cepCli = '" + getCepCli() + "'  WHERE codCli = '" + getCodCli() + "'";
+            MessageBox.Show(query);
+
+            if (this.abrirConexao() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conectar);
+                cmd.ExecuteNonQuery();
+                this.fecharConexao();
+            }
+        }
+
+        public void excluir()
+        {
+            string query = "Delete from tb_clientes where codCli= '" + getCodCli() + "'";
+            if (this.abrirConexao() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conectar);
+                cmd.ExecuteNonQuery();
+                this.fecharConexao();
+            }
+        }
     }
 }

@@ -43,6 +43,10 @@
             this.pcb_Cancelar = new System.Windows.Forms.PictureBox();
             this.pcb_Voltar = new System.Windows.Forms.PictureBox();
             this.gpb_FrmCliente = new System.Windows.Forms.GroupBox();
+            this.pcb_Exclusao = new System.Windows.Forms.PictureBox();
+            this.pcb_Edicao = new System.Windows.Forms.PictureBox();
+            this.lbl_codCli = new System.Windows.Forms.Label();
+            this.lbl_CodigoTag = new System.Windows.Forms.Label();
             this.txtCepCli = new System.Windows.Forms.TextBox();
             this.txtUfCli = new System.Windows.Forms.TextBox();
             this.txtCidadeCli = new System.Windows.Forms.TextBox();
@@ -72,6 +76,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Cancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Voltar)).BeginInit();
             this.gpb_FrmCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_Exclusao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_Edicao)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +157,7 @@
             this.pcb_Pesquisar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Pesquisar.TabIndex = 3;
             this.pcb_Pesquisar.TabStop = false;
+            this.pcb_Pesquisar.Click += new System.EventHandler(this.pcb_Pesquisar_Click);
             // 
             // pcb_Excluir
             // 
@@ -161,11 +168,12 @@
             this.pcb_Excluir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Excluir.TabIndex = 4;
             this.pcb_Excluir.TabStop = false;
+            this.pcb_Excluir.Click += new System.EventHandler(this.pcb_Excluir_Click);
             // 
             // pcb_Confirmar
             // 
             this.pcb_Confirmar.Image = ((System.Drawing.Image)(resources.GetObject("pcb_Confirmar.Image")));
-            this.pcb_Confirmar.Location = new System.Drawing.Point(210, 172);
+            this.pcb_Confirmar.Location = new System.Drawing.Point(265, 172);
             this.pcb_Confirmar.Name = "pcb_Confirmar";
             this.pcb_Confirmar.Size = new System.Drawing.Size(25, 30);
             this.pcb_Confirmar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -176,7 +184,7 @@
             // pcb_Cancelar
             // 
             this.pcb_Cancelar.Image = ((System.Drawing.Image)(resources.GetObject("pcb_Cancelar.Image")));
-            this.pcb_Cancelar.Location = new System.Drawing.Point(241, 172);
+            this.pcb_Cancelar.Location = new System.Drawing.Point(296, 172);
             this.pcb_Cancelar.Name = "pcb_Cancelar";
             this.pcb_Cancelar.Size = new System.Drawing.Size(25, 30);
             this.pcb_Cancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -187,7 +195,7 @@
             // pcb_Voltar
             // 
             this.pcb_Voltar.Image = ((System.Drawing.Image)(resources.GetObject("pcb_Voltar.Image")));
-            this.pcb_Voltar.Location = new System.Drawing.Point(273, 27);
+            this.pcb_Voltar.Location = new System.Drawing.Point(306, 27);
             this.pcb_Voltar.Name = "pcb_Voltar";
             this.pcb_Voltar.Size = new System.Drawing.Size(25, 30);
             this.pcb_Voltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,6 +205,10 @@
             // 
             // gpb_FrmCliente
             // 
+            this.gpb_FrmCliente.Controls.Add(this.pcb_Exclusao);
+            this.gpb_FrmCliente.Controls.Add(this.pcb_Edicao);
+            this.gpb_FrmCliente.Controls.Add(this.lbl_codCli);
+            this.gpb_FrmCliente.Controls.Add(this.lbl_CodigoTag);
             this.gpb_FrmCliente.Controls.Add(this.txtCepCli);
             this.gpb_FrmCliente.Controls.Add(this.txtUfCli);
             this.gpb_FrmCliente.Controls.Add(this.pcb_Cancelar);
@@ -224,6 +236,52 @@
             this.gpb_FrmCliente.TabStop = false;
             this.gpb_FrmCliente.Text = "Ficha Cliente";
             this.gpb_FrmCliente.Visible = false;
+            // 
+            // pcb_Exclusao
+            // 
+            this.pcb_Exclusao.Image = ((System.Drawing.Image)(resources.GetObject("pcb_Exclusao.Image")));
+            this.pcb_Exclusao.Location = new System.Drawing.Point(211, 172);
+            this.pcb_Exclusao.Name = "pcb_Exclusao";
+            this.pcb_Exclusao.Size = new System.Drawing.Size(25, 30);
+            this.pcb_Exclusao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_Exclusao.TabIndex = 21;
+            this.pcb_Exclusao.TabStop = false;
+            this.pcb_Exclusao.Click += new System.EventHandler(this.pcb_Exclusao_Click);
+            // 
+            // pcb_Edicao
+            // 
+            this.pcb_Edicao.Image = ((System.Drawing.Image)(resources.GetObject("pcb_Edicao.Image")));
+            this.pcb_Edicao.Location = new System.Drawing.Point(180, 172);
+            this.pcb_Edicao.Name = "pcb_Edicao";
+            this.pcb_Edicao.Size = new System.Drawing.Size(25, 30);
+            this.pcb_Edicao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_Edicao.TabIndex = 20;
+            this.pcb_Edicao.TabStop = false;
+            this.pcb_Edicao.Visible = false;
+            this.pcb_Edicao.Click += new System.EventHandler(this.pcb_Edicao_Click);
+            // 
+            // lbl_codCli
+            // 
+            this.lbl_codCli.AutoSize = true;
+            this.lbl_codCli.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_codCli.ForeColor = System.Drawing.Color.Red;
+            this.lbl_codCli.Location = new System.Drawing.Point(58, 206);
+            this.lbl_codCli.Name = "lbl_codCli";
+            this.lbl_codCli.Size = new System.Drawing.Size(121, 22);
+            this.lbl_codCli.TabIndex = 19;
+            this.lbl_codCli.Text = "Sem Código";
+            this.lbl_codCli.Visible = false;
+            // 
+            // lbl_CodigoTag
+            // 
+            this.lbl_CodigoTag.AutoSize = true;
+            this.lbl_CodigoTag.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_CodigoTag.Location = new System.Drawing.Point(6, 213);
+            this.lbl_CodigoTag.Name = "lbl_CodigoTag";
+            this.lbl_CodigoTag.Size = new System.Drawing.Size(49, 14);
+            this.lbl_CodigoTag.TabIndex = 18;
+            this.lbl_CodigoTag.Text = "Código";
+            this.lbl_CodigoTag.Visible = false;
             // 
             // txtCepCli
             // 
@@ -416,6 +474,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Voltar)).EndInit();
             this.gpb_FrmCliente.ResumeLayout(false);
             this.gpb_FrmCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_Exclusao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_Edicao)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -459,5 +519,9 @@
         private Label label1;
         private GroupBox groupBox1;
         public DataGridView dataGridView1;
+        private PictureBox pcb_Edicao;
+        private Label lbl_codCli;
+        private Label lbl_CodigoTag;
+        private PictureBox pcb_Exclusao;
     }
 }

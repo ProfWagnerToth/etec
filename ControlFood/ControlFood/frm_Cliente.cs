@@ -108,7 +108,12 @@ namespace ControlFood
             string cep = Convert.ToString(selectedRow.Cells["cepCli"].Value);
 
             gpb_FrmCliente.Visible = true;
+            pcb_Edicao.Visible = true;
+            pcb_Confirmar.Visible = false;
+            lbl_CodigoTag.Visible=true;
+            lbl_codCli.Visible = true;
 
+            lbl_codCli.Text = codigo;
             txtNomeCli.Text = nome;
             txtCpfCli.Text = cpf;
             txtTelCli.Text = telefone;
@@ -119,6 +124,7 @@ namespace ControlFood
             txtUfCli.Text = uf;
             txtCepCli.Text = cep;
 
+            
             cadCli.setCodCli(Int32.Parse(codigo));
             cadCli.setNomeCli(nome);
             cadCli.setCpfCli(cpf);
@@ -128,11 +134,75 @@ namespace ControlFood
             cadCli.setBairroCli(bairro);
             cadCli.setCidadeCli(cidade);
             cadCli.setufCli(uf);
-            cadCli.setCepCli(cep);
+            cadCli.setCepCli(cep);        
 
+        }
 
-            
+        private void pcb_Edicao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cadCli.setNomeCli(txtNomeCli.Text);
+                cadCli.setCpfCli(txtCpfCli.Text);
+                cadCli.setTelCli(txtCpfCli.Text);
+                cadCli.setEnderecoCli(txtEnderecoCli.Text);
+                cadCli.setNumCli(Int32.Parse(txtNumCli.Text));
+                cadCli.setBairroCli(txtBairroCli.Text);
+                cadCli.setCidadeCli(txtCidadeCli.Text);
+                cadCli.setufCli(txtUfCli.Text);
+                cadCli.setCepCli(txtCepCli.Text);
+                cadCli.alterar();
+                dataGridView1.DataSource = cadCli.ConsultarCodCli();
+            }
 
+            finally
+            {
+                MessageBox.Show("Informações alteradas com sucesso");
+            }
+        }
+
+        private void pcb_Pesquisar_Click(object sender, EventArgs e)
+        {
+            //Chamada do formulário de pesquisa para realizar edição dos dados.
+            frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
+            newPesquisaCli.Show();
+        }
+
+        private void pcb_Excluir_Click(object sender, EventArgs e)
+        {
+            //Chamada do formulário de pesquisa para realizar edição dos dados.
+            frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
+            newPesquisaCli.Show();
+        }
+
+        private void pcb_Exclusao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cadCli.setCodCli(Int32.Parse(lbl_codCli.Text));
+                cadCli.excluir();                
+                dataGridView1.DataSource = cadCli.Consultar();
+                pcb_Edicao.Visible = false;
+                pcb_Exclusao.Visible = false;
+                pcb_Confirmar.Visible = true;
+                lbl_CodigoTag.Visible = false;
+                lbl_codCli.Visible = false;
+                txtNomeCli.Clear();
+                txtCpfCli.Clear();
+                txtTelCli.Clear();
+                txtEnderecoCli.Clear();
+                txtNumCli.Clear();
+                txtBairroCli.Clear();
+                txtCidadeCli.Clear();
+                txtUfCli.Clear();
+                txtCepCli.Clear();
+                txtNomeCli.Focus();
+            }
+
+            finally
+            {
+                MessageBox.Show("Informações excluídas com sucesso");
+            }
         }
     }
 }
