@@ -14,7 +14,7 @@
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Hide();
+            
             frm_Cliente newFrm_Cliente = new frm_Cliente();
             newFrm_Cliente.ShowDialog();
 

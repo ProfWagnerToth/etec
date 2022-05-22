@@ -88,6 +88,7 @@ namespace ControlFood
             //Chamada do formulário de pesquisa para realizar edição dos dados.
             frm_Pesquisa newPesquisaCli = new frm_Pesquisa();
             newPesquisaCli.Show();
+
             
         }
 

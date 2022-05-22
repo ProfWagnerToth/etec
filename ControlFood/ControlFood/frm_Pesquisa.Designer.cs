@@ -265,6 +265,7 @@
             this.Controls.Add(this.gpb_PessoaJuridica);
             this.Controls.Add(this.gpb_PessoaFisica);
             this.Name = "frm_Pesquisa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Formulário de Pesquisa";
             this.gpb_PessoaFisica.ResumeLayout(false);
             this.gpb_PessoaFisica.PerformLayout();

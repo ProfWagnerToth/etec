@@ -451,6 +451,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 313);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gpb_FrmCliente);
@@ -461,7 +462,10 @@
             this.Controls.Add(this.pcb_Inserir);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_Cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ControlFood - Automação de Bar e Restaurante - Módulo Clientes";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
