@@ -30,15 +30,18 @@ namespace ControlFood
              4. Criar métodos de pesquisar dentro da Classe especificos para Busca por Nome e por CPF.
              5. No formulário onde irá aparecer os dados deverá alterar a propriedade do elemento DataGrid no Seção Design -> Modifiers, trocar de Private para Public, desta forma poderá acessar o DataGrid publico de qualquer outro formulário desde que esteja instanciado.
             */
-            
+
             class_Clientes buscar = new class_Clientes(); //Instanciamento da Classe
             frm_Cliente form = new frm_Cliente(); //Instanciamento do Formulario Cliente
 
             class_Funcionarios buscarFunc = new class_Funcionarios(); //Instanciamento da Classe
             frm_Funcionario formFunc = new frm_Funcionario(); //Instanciamento do Formulario Func
 
+            Class_Fornecedores buscarForn = new Class_Fornecedores(); //Instanciamento da Classe
+            frm_Fornecedor formForn = new frm_Fornecedor(); //Instanciamento do Formulario Func
 
-            if (rdb_Nome.Checked && rdb_Nome.Visible==true) //Verificando se a opção de pesquisa por esta selecionada
+
+            if (rdb_Nome.Checked && rdb_Nome.Visible == true) //Verificando se a opção de pesquisa por esta selecionada
             {
                 try //rotina de pesquisa no formulário 
                 {
@@ -46,7 +49,7 @@ namespace ControlFood
                     this.Hide();
                     form.Show(); //Abre o formulário para apresentação dos Dados.
                     form.dataGridView1.DataSource = buscar.ConsultarNome(); //apontamento da Datagrid do formulário instanciado, realizando do método de busca.
-                    
+
                 }
 
                 finally //Conclusão da pesquisa.
@@ -55,7 +58,7 @@ namespace ControlFood
 
                 }
             }
-            if (rdb_CPF.Checked && rdb_CPF.Visible==true)
+            if (rdb_CPF.Checked && rdb_CPF.Visible == true)
             {
                 try
                 {
@@ -71,7 +74,7 @@ namespace ControlFood
                 }
             }
 
-            if (rdb_NomeFunc.Checked && rdb_NomeFunc.Visible==true) //Verificando se a opção de pesquisa por esta selecionada
+            if (rdb_NomeFunc.Checked && rdb_NomeFunc.Visible == true) //Verificando se a opção de pesquisa por esta selecionada
             {
                 try //rotina de pesquisa no formulário 
                 {
@@ -79,25 +82,55 @@ namespace ControlFood
                     this.Hide();
                     formFunc.Show(); //Abre o formulário para apresentação dos Dados.
                     formFunc.dgv_Funcionario.DataSource = buscarFunc.ConsultarNome(); //apontamento da Datagrid do formulário instanciado, realizando do método de busca.
-                                    }
+                }
                 finally //Conclusão da pesquisa.
                 {
                     MessageBox.Show("Busca Realizada com Sucesso!!!"); //Menssagem de Busca Realizada com Sucesso ao usuário!
 
                 }
             }
-            if (rdb_CodFuncionario.Checked && rdb_CodFuncionario.Visible==true)
+            if (rdb_CodFuncionario.Checked && rdb_CodFuncionario.Visible == true)
             {
                 try
                 {
                     buscarFunc.setCpfFunc(txt_Pesquisa.Text);
                     formFunc.Show();
-                    formFunc.dgv_Funcionario.DataSource = buscarFunc.ConsultarCPFFunc();                
+                    formFunc.dgv_Funcionario.DataSource = buscarFunc.ConsultarCPFFunc();
                 }
                 finally
                 {
                     MessageBox.Show("Busca Realizada com Sucesso!!!");
 
+                }
+            }
+
+            if (rdb_RazaoSocial.Checked && rdb_RazaoSocial.Visible == true)
+            {
+                try
+                {
+                    buscarForn.setRazaoSocial(txt_Pesquisa.Text);
+                    formForn.Show();
+                    formForn.dgvFornecedor.DataSource = buscarForn.ConsultarRazaoSocial();
+                }
+                finally
+                {
+                    MessageBox.Show("Busca Realizada com Sucesso!!!");
+
+                }
+
+                if (rdb_CNPJ.Checked && rdb_CNPJ.Visible == true)
+                {
+                    try
+                    {
+                        buscarForn.setCnpj(txt_Pesquisa.Text);
+                        formForn.Show();
+                        formForn.dgvFornecedor.DataSource = buscarForn.ConsultarCNPJ();
+                    }
+                    finally
+                    {
+                        MessageBox.Show("Busca Realizada com Sucesso!!!");
+
+                    }
                 }
             }
         }

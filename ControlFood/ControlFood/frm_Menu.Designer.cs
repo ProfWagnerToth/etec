@@ -93,6 +93,7 @@
             this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
             this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
@@ -113,19 +114,19 @@
             // móduloBalcãoToolStripMenuItem
             // 
             this.móduloBalcãoToolStripMenuItem.Name = "móduloBalcãoToolStripMenuItem";
-            this.móduloBalcãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.móduloBalcãoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.móduloBalcãoToolStripMenuItem.Text = "Módulo Balcão";
             // 
             // móduloMesaToolStripMenuItem
             // 
             this.móduloMesaToolStripMenuItem.Name = "móduloMesaToolStripMenuItem";
-            this.móduloMesaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.móduloMesaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.móduloMesaToolStripMenuItem.Text = "Módulo Mesa";
             // 
             // móduloDeliveryToolStripMenuItem
             // 
             this.móduloDeliveryToolStripMenuItem.Name = "móduloDeliveryToolStripMenuItem";
-            this.móduloDeliveryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.móduloDeliveryToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.móduloDeliveryToolStripMenuItem.Text = "Módulo Delivery";
             // 
             // sairDoAplicativoToolStripMenuItem

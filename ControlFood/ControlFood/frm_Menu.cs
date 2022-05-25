@@ -30,5 +30,11 @@
             frm_Funcionario newFrm_Funcionario = new frm_Funcionario();
             newFrm_Funcionario.ShowDialog();
         }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Fornecedor newFrm_Fornecedor = new frm_Fornecedor();
+            newFrm_Fornecedor.ShowDialog();
+        }
     }
 }

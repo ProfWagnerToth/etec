@@ -218,7 +218,7 @@
             this.pcb_Excluir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_Excluir.TabIndex = 8;
             this.pcb_Excluir.TabStop = false;
-            this.pcb_Excluir.Click += new System.EventHandler(this.pcb_Excluir_Click);
+          
             // 
             // groupBox1
             // 

@@ -165,7 +165,7 @@ namespace ControlFood
                 {
                     cadCli.setNomeCli(txtNomeCli.Text);
                     cadCli.setCpfCli(txtCpfCli.Text);
-                    cadCli.setTelCli(txtCpfCli.Text);
+                    cadCli.setTelCli(txtTelCli.Text);
                     cadCli.setEnderecoCli(txtEnderecoCli.Text);
                     cadCli.setNumCli(Int32.Parse(txtNumCli.Text));
                     cadCli.setBairroCli(txtBairroCli.Text);

@@ -249,9 +249,7 @@
             this.txtCpfCli.PlaceholderText = "999.999.999-99";
             this.txtCpfCli.Size = new System.Drawing.Size(112, 23);
             this.txtCpfCli.TabIndex = 2;
-            this.txtCpfCli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCpfCli.TextChanged += new System.EventHandler(this.txtCpfCli_TextChanged);
-            this.txtCpfCli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpfCli_KeyPress);
+            this.txtCpfCli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;            
             this.txtCpfCli.Leave += new System.EventHandler(this.txtCpfCli_Leave);
             // 
             // pcb_Exclusao
