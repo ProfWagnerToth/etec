@@ -15,18 +15,7 @@ namespace ControlFood
         public frm_Pesquisa()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        }        
         private void pcb_Voltar_Click(object sender, EventArgs e)
         {
             Close();
@@ -44,9 +33,12 @@ namespace ControlFood
             
             class_Clientes buscar = new class_Clientes(); //Instanciamento da Classe
             frm_Cliente form = new frm_Cliente(); //Instanciamento do Formulario Cliente
-                       
 
-            if (rdb_Nome.Checked) //Verificando se a opção de pesquisa por esta selecionada
+            class_Funcionarios buscarFunc = new class_Funcionarios(); //Instanciamento da Classe
+            frm_Funcionario formFunc = new frm_Funcionario(); //Instanciamento do Formulario Func
+
+
+            if (rdb_Nome.Checked && rdb_Nome.Visible==true) //Verificando se a opção de pesquisa por esta selecionada
             {
                 try //rotina de pesquisa no formulário 
                 {
@@ -54,36 +46,22 @@ namespace ControlFood
                     this.Hide();
                     form.Show(); //Abre o formulário para apresentação dos Dados.
                     form.dataGridView1.DataSource = buscar.ConsultarNome(); //apontamento da Datagrid do formulário instanciado, realizando do método de busca.
-
                     
-                    /* Alterções não Aplicadas no Projeto 
-                    //Alteração dos nomes das colunas do datagridview
-                    dataGridView1.Columns["nomeCli"].HeaderText = "Nome";
-                    dataGridView1.Columns["telCli"].HeaderText = "Código";
-                    dataGridView1.Columns["cidadeCli"].HeaderText = "Sobrenome";
-                    dataGridView1.Columns["ufCli"].HeaderText = "CPF"; */
-
                 }
+
                 finally //Conclusão da pesquisa.
                 {
                     MessageBox.Show("Busca Realizada com Sucesso!!!"); //Menssagem de Busca Realizada com Sucesso ao usuário!
 
                 }
             }
-            if (rdb_CPF.Checked)
+            if (rdb_CPF.Checked && rdb_CPF.Visible==true)
             {
                 try
                 {
                     buscar.setCpfCli(txt_Pesquisa.Text);
                     form.Show();
                     form.dataGridView1.DataSource = buscar.ConsultarCPF();
-
-                    /* Alterções não Aplicadas no Projeto
-                    //Alteração dos nomes das colunas do datagridview
-                    dataGridView1.Columns["nomeCli"].HeaderText = "Nome";
-                    dataGridView1.Columns["telCli"].HeaderText = "Código";
-                    dataGridView1.Columns["cidadeCli"].HeaderText = "Sobrenome";
-                    dataGridView1.Columns["ufCli"].HeaderText = "CPF"; */
 
                 }
                 finally
@@ -92,16 +70,39 @@ namespace ControlFood
 
                 }
             }
-            
 
+            if (rdb_NomeFunc.Checked && rdb_NomeFunc.Visible==true) //Verificando se a opção de pesquisa por esta selecionada
+            {
+                try //rotina de pesquisa no formulário 
+                {
+                    buscarFunc.setNomeFunc(txt_Pesquisa.Text); //Recebe informação da Text para alimentar o método SET e assim utilizar o objeto instaciado
+                    this.Hide();
+                    formFunc.Show(); //Abre o formulário para apresentação dos Dados.
+                    formFunc.dgv_Funcionario.DataSource = buscarFunc.ConsultarNome(); //apontamento da Datagrid do formulário instanciado, realizando do método de busca.
+                                    }
+                finally //Conclusão da pesquisa.
+                {
+                    MessageBox.Show("Busca Realizada com Sucesso!!!"); //Menssagem de Busca Realizada com Sucesso ao usuário!
 
+                }
+            }
+            if (rdb_CodFuncionario.Checked && rdb_CodFuncionario.Visible==true)
+            {
+                try
+                {
+                    buscarFunc.setCpfFunc(txt_Pesquisa.Text);
+                    formFunc.Show();
+                    formFunc.dgv_Funcionario.DataSource = buscarFunc.ConsultarCPFFunc();                
+                }
+                finally
+                {
+                    MessageBox.Show("Busca Realizada com Sucesso!!!");
+
+                }
+            }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
+       
         private void pcb_Excluir_Click(object sender, EventArgs e)
         {
             txt_Pesquisa.Clear();

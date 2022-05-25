@@ -24,5 +24,11 @@
 
 
         }
+
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Funcionario newFrm_Funcionario = new frm_Funcionario();
+            newFrm_Funcionario.ShowDialog();
+        }
     }
 }

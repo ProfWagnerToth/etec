@@ -23,7 +23,7 @@ namespace ControlFood
             frm_Menu newFrm_Menu = new frm_Menu();
             newFrm_Menu.Show();
             Close();
-            
+
         }
         //Instanciando a Classe e criando Objeto do Método Inserir
         class_Clientes newCli = new class_Clientes();
@@ -313,20 +313,7 @@ namespace ControlFood
             newPesquisaCli.rdb_CodBarras.Visible = false;
             newPesquisaCli.rdb_Descricao.Visible = false;
             newPesquisaCli.txt_Pesquisa.Focus();
-        }
-
-        private void txtCpfCli_TextChanged(object sender, EventArgs e)
-        {
-            /*
-            string CPF = txtCpfCli.Text;                
-            string CPFFormatado = String.Format(@"{0:\000\.000\.000\-00}", CPF);
-            txtCpfCli.Text = CPFFormatado;*/
-        }
-
-        private void txtCpfCli_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-        }
+        }       
 
         private void txtCpfCli_Leave(object sender, EventArgs e)
         {
@@ -357,6 +344,14 @@ namespace ControlFood
             long numCEPtxt = long.Parse(txtCepCli.Text);
             string strMascara = string.Format(@"{0:00\.000\-000}", numCEPtxt);
             txtCepCli.Text = Convert.ToString(string.Format(strMascara, numCEPtxt));
+        }
+
+        private void voltarAoMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Retornando o formulário anterior
+            frm_Menu newFrm_Menu = new frm_Menu();
+            newFrm_Menu.Show();
+            Close();
         }
     }
 }

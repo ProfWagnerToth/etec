@@ -66,7 +66,7 @@
             this.gpb_PessoaFisica.TabIndex = 0;
             this.gpb_PessoaFisica.TabStop = false;
             this.gpb_PessoaFisica.Text = "Clientes";
-            this.gpb_PessoaFisica.Enter += new System.EventHandler(this.groupBox1_Enter);
+            
             // 
             // rdb_CPF
             // 
@@ -176,7 +176,7 @@
             this.txt_Pesquisa.Name = "txt_Pesquisa";
             this.txt_Pesquisa.Size = new System.Drawing.Size(518, 23);
             this.txt_Pesquisa.TabIndex = 3;
-            this.txt_Pesquisa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
             // 
             // label1
             // 
