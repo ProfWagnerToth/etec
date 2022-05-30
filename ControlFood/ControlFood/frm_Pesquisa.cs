@@ -38,7 +38,10 @@ namespace ControlFood
             frm_Funcionario formFunc = new frm_Funcionario(); //Instanciamento do Formulario Func
 
             Class_Fornecedores buscarForn = new Class_Fornecedores(); //Instanciamento da Classe
-            frm_Fornecedor formForn = new frm_Fornecedor(); //Instanciamento do Formulario Func
+            frm_Fornecedor formForn = new frm_Fornecedor(); //Instanciamento do Formulario Forncedor
+
+            class_Produtos buscarProd = new class_Produtos(); //Instanciamento da Classe
+            frm_Produtos formProd = new frm_Produtos(); //Instanciamento do Formulario Func
 
 
             if (rdb_Nome.Checked && rdb_Nome.Visible == true) //Verificando se a opção de pesquisa por esta selecionada
@@ -125,6 +128,48 @@ namespace ControlFood
                         buscarForn.setCnpj(txt_Pesquisa.Text);
                         formForn.Show();
                         formForn.dgvFornecedor.DataSource = buscarForn.ConsultarCNPJ();
+                    }
+                    finally
+                    {
+                        MessageBox.Show("Busca Realizada com Sucesso!!!");
+
+                    }
+                }
+                if (rdb_CodBarras.Checked && rdb_CodBarras.Visible == true)
+                {
+                    try
+                    {
+                        buscarProd.setCodBarProd(txt_Pesquisa.Text);
+                        formProd.Show();
+                        formProd.dgvProdutos.DataSource = buscarProd.ConsultarCodBar();
+                    }
+                    finally
+                    {
+                        MessageBox.Show("Busca Realizada com Sucesso!!!");
+
+                    }
+                }
+                if (rdb_Descricao.Checked && rdb_Descricao.Visible == true)
+                {
+                    try
+                    {
+                        buscarProd.setDescProd(txt_Pesquisa.Text);
+                        formProd.Show();
+                        formProd.dgvProdutos.DataSource = buscarProd.ConsultarDescricao();
+                    }
+                    finally
+                    {
+                        MessageBox.Show("Busca Realizada com Sucesso!!!");
+
+                    }
+                }
+                if (rdb_CodigoProduto.Checked && rdb_CodigoProduto.Visible == true)
+                {
+                    try
+                    {
+                        buscarProd.setCodProd(Int32.Parse(txt_Pesquisa.Text));
+                        formProd.Show();
+                        formProd.dgvProdutos.DataSource = buscarProd.ConsultarCodBar();
                     }
                     finally
                     {

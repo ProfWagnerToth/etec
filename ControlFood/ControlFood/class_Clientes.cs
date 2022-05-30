@@ -207,7 +207,7 @@ namespace ControlFood
         {
             this.abrirConexao();
 
-            string mSQL = "Select nomeCli as Nome, cpfCli as CPF, enderecoCli as Endereço,numCli as Numero, bairroCli as Bairro, cidadeCli as Cidade, ufCli as Estado from tb_clientes where codCli ='" + getCodCli() + "'";         
+            string mSQL = "Select codCli as Codigo, nomeCli as Nome, cpfCli as CPF,telCli as Telefone, enderecoCli as Endereco,numCli as Numero, bairroCli as Bairro, cidadeCli as Cidade, ufCli as Estado, cepCli as CEP from tb_clientes where codCli ='" + getCodCli() + "'";         
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
 
@@ -224,7 +224,7 @@ namespace ControlFood
 
         public void alterar()
         {
-            string query = "UPDATE tb_clientes SET nomeCli ='" + getNomeCli() + "', cpfCli = '" + getCpfCli() + "', telCli = '" + getTelCli() + "', enderecoCli = '" + getEnderecoCli() + "', numCli = '" + getNumCli() + "', bairroCli = '" + getBairroCli() + "', cidadeCli = '" + getCidadeCli() + "', ufCli = '" +getUfCli() + "', cepCli = '" + getCepCli() + "'  WHERE codCli = '" + getCodCli() + "'";
+            string query = "UPDATE tb_clientes SET nomeCli ='" + getNomeCli() + "', cpfCli = '" + getCpfCli() + "', telCli = '" + getTelCli() + "', enderecoCli = '" + getEnderecoCli() + "', numCli = '" + getNumCli() + "', bairroCli = '" + getBairroCli() + "', cidadeCli = '" + getCidadeCli() + "', ufCli = '" + getUfCli() + "', cepCli = '" + getCepCli() + "'  WHERE codCli = '" + getCodCli() + "'";
            
 
             if (this.abrirConexao() == true)

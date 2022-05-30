@@ -95,6 +95,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            
             // 
             // adicionarToolStripMenuItem
             // 
@@ -241,6 +242,7 @@
             this.gpb_FrmCliente.TabStop = false;
             this.gpb_FrmCliente.Text = "Ficha Cliente";
             this.gpb_FrmCliente.Visible = false;
+            
             // 
             // txtCpfCli
             // 
@@ -249,7 +251,8 @@
             this.txtCpfCli.PlaceholderText = "999.999.999-99";
             this.txtCpfCli.Size = new System.Drawing.Size(112, 23);
             this.txtCpfCli.TabIndex = 2;
-            this.txtCpfCli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;            
+            this.txtCpfCli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right; 
+            this.txtCpfCli.Enter += new System.EventHandler(this.txtCpfCli_Enter);
             this.txtCpfCli.Leave += new System.EventHandler(this.txtCpfCli_Leave);
             // 
             // pcb_Exclusao
@@ -298,6 +301,7 @@
             this.lbl_CodigoTag.TabIndex = 18;
             this.lbl_CodigoTag.Text = "Código";
             this.lbl_CodigoTag.Visible = false;
+            
             // 
             // txtCepCli
             // 
@@ -306,6 +310,7 @@
             this.txtCepCli.PlaceholderText = "99.999-999";
             this.txtCepCli.Size = new System.Drawing.Size(124, 23);
             this.txtCepCli.TabIndex = 9;
+            this.txtCepCli.Enter += new System.EventHandler(this.txtCepCli_Enter);
             this.txtCepCli.Leave += new System.EventHandler(this.txtCepCli_Leave);
             // 
             // txtUfCli
@@ -315,6 +320,7 @@
             this.txtUfCli.PlaceholderText = "Insira Estado";
             this.txtUfCli.Size = new System.Drawing.Size(83, 23);
             this.txtUfCli.TabIndex = 8;
+            this.txtUfCli.Enter += new System.EventHandler(this.txtUfCli_Enter);
             // 
             // txtCidadeCli
             // 
@@ -323,6 +329,7 @@
             this.txtCidadeCli.PlaceholderText = "Insira Cidade";
             this.txtCidadeCli.Size = new System.Drawing.Size(141, 23);
             this.txtCidadeCli.TabIndex = 7;
+            
             // 
             // txtBairroCli
             // 
@@ -331,6 +338,7 @@
             this.txtBairroCli.PlaceholderText = "Insira o Bairro";
             this.txtBairroCli.Size = new System.Drawing.Size(151, 23);
             this.txtBairroCli.TabIndex = 6;
+            
             // 
             // txtNumCli
             // 
@@ -339,6 +347,7 @@
             this.txtNumCli.PlaceholderText = "999";
             this.txtNumCli.Size = new System.Drawing.Size(49, 23);
             this.txtNumCli.TabIndex = 5;
+            
             // 
             // txtEnderecoCli
             // 
@@ -347,6 +356,7 @@
             this.txtEnderecoCli.PlaceholderText = "Insira o Endereço";
             this.txtEnderecoCli.Size = new System.Drawing.Size(253, 23);
             this.txtEnderecoCli.TabIndex = 4;
+            
             // 
             // txtTelCli
             // 
@@ -355,6 +365,7 @@
             this.txtTelCli.PlaceholderText = "(99)99999-1234";
             this.txtTelCli.Size = new System.Drawing.Size(113, 23);
             this.txtTelCli.TabIndex = 3;
+            this.txtTelCli.Enter += new System.EventHandler(this.txtTelCli_Enter);
             this.txtTelCli.Leave += new System.EventHandler(this.txtTelCli_Leave);
             // 
             // txtNomeCli
@@ -364,6 +375,7 @@
             this.txtNomeCli.PlaceholderText = "Insira o Nome do Cliente";
             this.txtNomeCli.Size = new System.Drawing.Size(269, 23);
             this.txtNomeCli.TabIndex = 1;
+            
             // 
             // label9
             // 
@@ -373,6 +385,7 @@
             this.label9.Size = new System.Drawing.Size(31, 15);
             this.label9.TabIndex = 8;
             this.label9.Text = "CEP:";
+           
             // 
             // label8
             // 
@@ -382,6 +395,7 @@
             this.label8.Size = new System.Drawing.Size(24, 15);
             this.label8.TabIndex = 7;
             this.label8.Text = "UF:";
+            
             // 
             // label7
             // 
@@ -391,6 +405,7 @@
             this.label7.Size = new System.Drawing.Size(47, 15);
             this.label7.TabIndex = 6;
             this.label7.Text = "Cidade:";
+            
             // 
             // label6
             // 
@@ -400,6 +415,7 @@
             this.label6.Size = new System.Drawing.Size(41, 15);
             this.label6.TabIndex = 5;
             this.label6.Text = "Bairro:";
+            
             // 
             // label5
             // 
@@ -409,6 +425,7 @@
             this.label5.Size = new System.Drawing.Size(54, 15);
             this.label5.TabIndex = 4;
             this.label5.Text = "Número:";
+            
             // 
             // label4
             // 
@@ -418,6 +435,7 @@
             this.label4.Size = new System.Drawing.Size(59, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Endereço:";
+            
             // 
             // label3
             // 
@@ -427,6 +445,7 @@
             this.label3.Size = new System.Drawing.Size(27, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tel.:";
+            
             // 
             // label2
             // 
@@ -436,6 +455,7 @@
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "CPF:";
+            
             // 
             // label1
             // 
@@ -445,6 +465,7 @@
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
+            
             // 
             // groupBox1
             // 
@@ -455,6 +476,7 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Visualização Banco de Dados";
+            
             // 
             // dataGridView1
             // 

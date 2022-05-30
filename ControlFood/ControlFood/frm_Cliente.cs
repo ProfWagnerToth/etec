@@ -43,6 +43,7 @@ namespace ControlFood
                 newCli.setCepCli(txtCepCli.Text);
                 newCli.inserir();
                 dataGridView1.DataSource = newCli.Consultar();
+                
             }
             finally
             {
@@ -140,20 +141,7 @@ namespace ControlFood
             txtBairroCli.Text = bairroCliente;
             txtCidadeCli.Text = cidadeCliente;
             txtUfCli.Text = ufCliente;
-            txtCepCli.Text = cepCliente;
-
-            //Recebendo dados pelo método SET
-            cadCli.setCodCli(Int32.Parse(codigoCliente));
-            cadCli.setNomeCli(nomeCliente);
-            cadCli.setCpfCli(cpfCliente);
-            cadCli.setTelCli(telefoneCliente);
-            cadCli.setEnderecoCli(enderecoCliente);
-            cadCli.setNumCli(Int32.Parse(numeroCliente));
-            cadCli.setBairroCli(bairroCliente);
-            cadCli.setCidadeCli(cidadeCliente);
-            cadCli.setufCli(ufCliente);
-            cadCli.setCepCli(cepCliente);        
-
+            txtCepCli.Text = cepCliente; 
         }
 
         private void pcb_Edicao_Click(object sender, EventArgs e)
@@ -163,6 +151,7 @@ namespace ControlFood
             {
                 try
                 {
+                    cadCli.setCodCli(Int32.Parse(lbl_codCli.Text));
                     cadCli.setNomeCli(txtNomeCli.Text);
                     cadCli.setCpfCli(txtCpfCli.Text);
                     cadCli.setTelCli(txtTelCli.Text);
@@ -179,6 +168,19 @@ namespace ControlFood
                 finally
                 {
                     MessageBox.Show("Informações alteradas com sucesso");
+                    lbl_codCli.Visible=false;
+                    lbl_CodigoTag.Visible=false;
+                    txtNomeCli.Clear();
+                    txtCpfCli.Clear();
+                    txtTelCli.Clear();
+                    txtEnderecoCli.Clear();
+                    txtNumCli.Clear();
+                    txtBairroCli.Clear();
+                    txtCidadeCli.Clear();
+                    txtUfCli.Clear();
+                    txtCepCli.Clear();
+                    txtNomeCli.Focus();
+
                 }
             }            
         }
@@ -326,24 +328,97 @@ namespace ControlFood
             5. Retorne o valor da variavel para sua textbox agora com a mascara.
             */
 
-            long numCPFtxt = long.Parse(txtCpfCli.Text);            
-            string strMascara = string.Format(@"{0:000\.000\.000\-00}",numCPFtxt); 
-            string cpfMascara = Convert.ToString(string.Format(strMascara, numCPFtxt));           
-            txtCpfCli.Text = cpfMascara;   
+            /* Verificando se o campo está vazio e se realmente o usuario deseja deixar vazio, caso opte por deixar vazio completará com Zeros e passará para o proximo campo. */  
+
+            Class_Mascaras msk = new Class_Mascaras();
+            if (txtCpfCli.Text != "")
+            {
+                //Chamada de Método para aplicar Mascara
+                msk.setMskCpfCli(txtCpfCli.Text);
+                msk.mascaraCPF();
+                txtCpfCli.Text = msk.getMascaraCPF();
+               
+            }
+            else 
+            { 
+                //Menssagem de confirmação ao usuário
+            if (MessageBox.Show("Deseja deixar o registro sem CPF?", "CONFIRMAÇÃO DE CPF em Branco", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        //Aplicação de valores em caso de valor nulo
+                        txtCpfCli.Text = "00000000000";                        
+                    }
+                    finally
+                    {
+                        //Chamada do método para aplicar mascara
+                        msk.setMskCpfCli(txtCpfCli.Text);
+                        msk.mascaraCPF();
+                        txtCpfCli.Text = msk.getMascaraCPF();                        
+                    }
+                }
+            }            
         }
 
         private void txtTelCli_Leave(object sender, EventArgs e)
         {
-            long numTeltxt = long.Parse(txtTelCli.Text);
-            string strMascara = string.Format(@"{0:(00)00000-0000}", numTeltxt);
-            txtTelCli.Text =Convert.ToString(string.Format(strMascara, numTeltxt));
+            Class_Mascaras msk = new Class_Mascaras();
+
+            /* Verificando se o campo está vazio e se realmente o usuario deseja deixar vazio, caso opte por deixar vazio completará com Zeros e passará para o proximo campo. */
+            if (txtTelCli.Text != "")
+            {
+                    msk.setMskTelCli(txtTelCli.Text);
+                    msk.mascaraTelefoneCel();
+                    txtTelCli.Text = msk.getMascaraTelefoneCel();                           
+            }
+            else
+            {
+                if (MessageBox.Show("Deseja deixar o registro sem Telefone?", "CONFIRMAÇÃO de TELEFONE em Branco", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        txtTelCli.Text = "00000000000";
+                    }
+                    finally
+                    {
+                        msk.setMskTelCli(txtTelCli.Text);
+                        msk.mascaraTelefoneCel();
+                        txtTelCli.Text = msk.getMascaraTelefoneCel();
+                    }
+                }
+            }           
         }
 
         private void txtCepCli_Leave(object sender, EventArgs e)
         {
-            long numCEPtxt = long.Parse(txtCepCli.Text);
-            string strMascara = string.Format(@"{0:00\.000\-000}", numCEPtxt);
-            txtCepCli.Text = Convert.ToString(string.Format(strMascara, numCEPtxt));
+            /* Verificando se o campo está vazio e se realmente o usuario deseja deixar vazio, caso opte por deixar vazio completará com Zeros e passará para o proximo campo. */
+            Class_Mascaras msk = new Class_Mascaras();
+            if (txtCepCli.Text != "")
+            {
+                msk.setMskCepCli(txtCepCli.Text);
+                msk.mascaraCEP();
+                txtCepCli.Text = msk.getMascaraCEP();
+            }
+            else
+            {
+                if (txtCepCli.Text == "")
+                {
+                    if (MessageBox.Show("Deseja deixar o registro sem CPF?", "CONFIRMAÇÃO DE CPF em Branco", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            txtCepCli.Text = "00000000";
+
+                        }
+                        finally
+                        {
+                            msk.setMskCepCli(txtCepCli.Text);
+                            msk.mascaraCEP();
+                            txtCepCli.Text = msk.getMascaraCEP();
+                        }
+                    }
+                }
+            }
         }
 
         private void voltarAoMenuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -352,6 +427,26 @@ namespace ControlFood
             frm_Menu newFrm_Menu = new frm_Menu();
             newFrm_Menu.Show();
             Close();
+        }      
+
+        private void txtTelCli_Enter(object sender, EventArgs e)
+        {
+            txtTelCli.Clear();
+        }
+
+        private void txtCpfCli_Enter(object sender, EventArgs e)
+        {
+            txtCpfCli.Clear();
+        }
+
+        private void txtCepCli_Enter(object sender, EventArgs e)
+        {
+            txtCepCli.Clear();
+        }
+
+        private void txtUfCli_Enter(object sender, EventArgs e)
+        {
+            txtUfCli.CharacterCasing = CharacterCasing.Upper;
         }
     }
 }

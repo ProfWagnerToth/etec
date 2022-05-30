@@ -36,5 +36,11 @@
             frm_Fornecedor newFrm_Fornecedor = new frm_Fornecedor();
             newFrm_Fornecedor.ShowDialog();
         }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Produtos newFrm_Produtos = new frm_Produtos();
+            newFrm_Produtos.ShowDialog();
+        }
     }
 }

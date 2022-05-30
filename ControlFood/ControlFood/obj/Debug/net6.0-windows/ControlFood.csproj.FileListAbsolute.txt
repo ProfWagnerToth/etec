@@ -31,3 +31,4 @@ C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debu
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.frm_Pesquisa.resources
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.frm_Funcionario.resources
 C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.frm_Fornecedor.resources
+C:\Users\wagne\source\repos\wagnertothetec\etec\ControlFood\ControlFood\obj\Debug\net6.0-windows\ControlFood.frm_Produtos.resources
