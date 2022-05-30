@@ -11,7 +11,8 @@ namespace ControlFood
         //Declaração de Variáveis privadas para uso na classe
         private string cpfCli;
         private string telCli;        
-        private string cepCli;        
+        private string cepCli;
+        
 
         // Retornos Set (sem retornos) e Get (com retornos)
 

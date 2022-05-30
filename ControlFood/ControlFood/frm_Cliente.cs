@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq; //Método de Contagem de Letras
 
 namespace ControlFood
 {
@@ -331,13 +332,26 @@ namespace ControlFood
             /* Verificando se o campo está vazio e se realmente o usuario deseja deixar vazio, caso opte por deixar vazio completará com Zeros e passará para o proximo campo. */  
 
             Class_Mascaras msk = new Class_Mascaras();
+
+            //Contagem de Digitos do numero do CPF
+            string cpf = txtCpfCli.Text;
+            int qtdChar = cpf.Count();
+
             if (txtCpfCli.Text != "")
             {
-                //Chamada de Método para aplicar Mascara
-                msk.setMskCpfCli(txtCpfCli.Text);
-                msk.mascaraCPF();
-                txtCpfCli.Text = msk.getMascaraCPF();
-               
+                if (qtdChar == 11)
+                {
+                    //Chamada de Método para aplicar Mascara
+                    msk.setMskCpfCli(txtCpfCli.Text);
+                    msk.mascaraCPF();
+                    txtCpfCli.Text = msk.getMascaraCPF();
+                }
+                else
+                {
+                    MessageBox.Show("Número digitado no campo CPF está fora dos Padrões! Favor Corrigir!");
+
+                    txtCpfCli.Focus();
+                }               
             }
             else 
             { 
@@ -367,9 +381,28 @@ namespace ControlFood
             /* Verificando se o campo está vazio e se realmente o usuario deseja deixar vazio, caso opte por deixar vazio completará com Zeros e passará para o proximo campo. */
             if (txtTelCli.Text != "")
             {
+                //Contagem de Digitos do numero do telefone
+                string tel = txtTelCli.Text;
+                int qtdChar = tel.Count();               
+                
+                //Verifica qual mascara aplicar no telefone
+                if (qtdChar ==10)
+                {
+                    msk.setMskTelCli(txtTelCli.Text);
+                    msk.mascaraTelefoneFixo();
+                    txtTelCli.Text = msk.getMascaraTelefoneFixo();
+                }
+                if (qtdChar == 11)
+                {
                     msk.setMskTelCli(txtTelCli.Text);
                     msk.mascaraTelefoneCel();
-                    txtTelCli.Text = msk.getMascaraTelefoneCel();                           
+                    txtTelCli.Text = msk.getMascaraTelefoneCel();
+                }
+                if (qtdChar !=10 && qtdChar!=11)
+                {
+                    MessageBox.Show("Número digitado no campo Telefone está fora dos Padrões! Favor Corrigir!");
+                    txtTelCli.Focus();  
+                }
             }
             else
             {
@@ -393,11 +426,25 @@ namespace ControlFood
         {
             /* Verificando se o campo está vazio e se realmente o usuario deseja deixar vazio, caso opte por deixar vazio completará com Zeros e passará para o proximo campo. */
             Class_Mascaras msk = new Class_Mascaras();
+
+            //Contagem de Digitos do numero do CEP
+            string cep = txtCepCli.Text;
+            int qtdChar = cep.Count();
+
+            
             if (txtCepCli.Text != "")
             {
-                msk.setMskCepCli(txtCepCli.Text);
-                msk.mascaraCEP();
-                txtCepCli.Text = msk.getMascaraCEP();
+                if (qtdChar == 8)
+                {
+                    msk.setMskCepCli(txtCepCli.Text);
+                    msk.mascaraCEP();
+                    txtCepCli.Text = msk.getMascaraCEP();
+                }
+                else
+                {
+                    MessageBox.Show("Número Digitado no Campo CEP, está fora do PADRÃO! Favor Corrigir!");
+                    txtCepCli.Focus();
+                }
             }
             else
             {
