@@ -12,6 +12,7 @@ namespace ControlFood
         private string cpfCli;
         private string telCli;        
         private string cepCli;
+        private string cnpjForn;
         
 
         // Retornos Set (sem retornos) e Get (com retornos)
@@ -46,6 +47,15 @@ namespace ControlFood
             return this.cepCli;
         }
 
+        public void setMskCnpj(string cnpj)
+        {
+            this.cnpjForn = cnpj;
+        }
+
+        public string getMskCnpj()
+        {
+            return this.cnpjForn;
+        }
         public void mascaraCPF()
         {
             long numCPFtxt = long.Parse(this.cpfCli);
