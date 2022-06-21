@@ -21,6 +21,7 @@ namespace ControlFood
         private string descProdBalcao;
         private double vlUnitarioProdBalcao;
         private double vlTotalProdBalcao;
+        private double vlSubtotalBalcao;
         private double descPorcentagem;
         private double descValor;
         private double totalAPagar;
@@ -102,6 +103,15 @@ namespace ControlFood
         public double getVlTotalProdBalcao()
         {
             return vlTotalProdBalcao;
+        }
+        public void setVlSubTotalBalcao(double vlsubtotal)
+        {
+            this.vlSubtotalBalcao = vlsubtotal;
+        }
+
+        public double getVlSubTotalBalcao()
+        {
+            return vlSubtotalBalcao;
         }
         public void setDescPerc(double descP)
         {
@@ -191,11 +201,8 @@ namespace ControlFood
         {
             string Date = DateTime.Now.ToString("yyyy/MM/dd");
 
-            string query = "Insert into tb_itemVendaBalcao (numeroVenda, diaVenda, qtd, codProd, valorUnitario) Values ('" + getNumVendaBalcao() + "','" + Date + "','" + getQtdProdBalcao() + "','" + getCodProdBalcao() + "','" + getVlUnitarioBalcao() + "')";
-
-            MessageBox.Show(query);
-
-
+            string query = "Insert into tb_itemVendaBalcao (numeroVenda, diaVenda, qtd, codProd, valorUnitario, totalItem, subTotal) Values ('" + getNumVendaBalcao() + "','" + Date + "','" + getQtdProdBalcao() + "','" + getCodProdBalcao() + "','" + getVlUnitarioBalcao() + "','" + getVlTotalProdBalcao() + "','" + getVlSubTotalBalcao() + "')";
+            
             if (this.abrirConexao() == true)
             {
                 MySqlCommand cmd = new MySqlCommand(query, conectar);
@@ -204,13 +211,13 @@ namespace ControlFood
                 this.fecharConexao();
             }
             
-        }
-
+        }        
+        
         public DataTable mostraItensComprados()
         {
             this.abrirConexao();
-
-            string mSQL = "SELECT idxVend as Index, qtd as QTD,codProd as Código,valorUnitario as Unitário, totalItem as Total FROM tb_itemVendaBalcao WHERE numeroVenda=(SELECT max(numeroVenda) FROM tb_itemVendaBalcao)";
+            
+            string mSQL = "SELECT idxVend as IDX, qtd as Qtd,codProd as Codigo,valorUnitario as Unitario, totalItem as Total FROM tb_itemVendaBalcao WHERE numeroVenda=(SELECT max(numeroVenda) FROM tb_itemVendaBalcao)";
 
             MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -219,9 +226,23 @@ namespace ControlFood
 
             DataTable dt = new DataTable();
             da.Fill(dt);
-            return dt;
+            return dt; 
         }
 
+        public DataTable buscaItemCodigo()
+        {
+            string mSQL = "Select codBarProd, descProd, undProd, vlVendProd from tb_produtos where codBarProd like '%" + getCodProdBalcao() + '%' + "'";
+
+            MySqlCommand cmd = new MySqlCommand(mSQL, conectar);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            this.fecharConexao();
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
 
     }
 }

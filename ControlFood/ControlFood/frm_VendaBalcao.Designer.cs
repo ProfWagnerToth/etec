@@ -54,7 +54,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtValorPago = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtExibeTotalAPagar = new System.Windows.Forms.Label();
+            this.lblExibeTotalAPagar = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnNovaVenda = new System.Windows.Forms.Button();
             this.btnInserirItem = new System.Windows.Forms.Button();
@@ -79,7 +79,9 @@
             this.txtCodProduto.Location = new System.Drawing.Point(10, 37);
             this.txtCodProduto.Name = "txtCodProduto";
             this.txtCodProduto.Size = new System.Drawing.Size(77, 23);
-            this.txtCodProduto.TabIndex = 0;
+            this.txtCodProduto.TabIndex = 4;
+            this.txtCodProduto.TextChanged += new System.EventHandler(this.txtCodProduto_TextChanged);
+            this.txtCodProduto.Leave += new System.EventHandler(this.txtCodProduto_Leave);
             // 
             // lblExibeUndProd
             // 
@@ -95,7 +97,7 @@
             this.txtDescProd.Location = new System.Drawing.Point(247, 37);
             this.txtDescProd.Name = "txtDescProd";
             this.txtDescProd.Size = new System.Drawing.Size(397, 23);
-            this.txtDescProd.TabIndex = 2;
+            this.txtDescProd.TabIndex = 6;
             // 
             // lblExibeValorUnt
             // 
@@ -121,6 +123,7 @@
             this.txtQtdProd.Name = "txtQtdProd";
             this.txtQtdProd.Size = new System.Drawing.Size(40, 23);
             this.txtQtdProd.TabIndex = 5;
+            this.txtQtdProd.Leave += new System.EventHandler(this.txtQtdProd_Leave);
             // 
             // label4
             // 
@@ -215,7 +218,7 @@
             this.dgvItensVendidos.RowTemplate.Height = 25;
             this.dgvItensVendidos.Size = new System.Drawing.Size(529, 281);
             this.dgvItensVendidos.TabIndex = 0;
-            this.dgvItensVendidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItensVendidos_CellContentClick);
+            
             // 
             // label10
             // 
@@ -231,11 +234,10 @@
             // 
             this.lblExibeSubTotal.AutoSize = true;
             this.lblExibeSubTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblExibeSubTotal.Location = new System.Drawing.Point(154, 25);
+            this.lblExibeSubTotal.Location = new System.Drawing.Point(192, 28);
             this.lblExibeSubTotal.Name = "lblExibeSubTotal";
-            this.lblExibeSubTotal.Size = new System.Drawing.Size(133, 25);
+            this.lblExibeSubTotal.Size = new System.Drawing.Size(0, 25);
             this.lblExibeSubTotal.TabIndex = 15;
-            this.lblExibeSubTotal.Text = "Valor SubTotal";
             // 
             // label12
             // 
@@ -251,7 +253,8 @@
             this.txtDescPorcentagem.Location = new System.Drawing.Point(6, 77);
             this.txtDescPorcentagem.Name = "txtDescPorcentagem";
             this.txtDescPorcentagem.Size = new System.Drawing.Size(69, 23);
-            this.txtDescPorcentagem.TabIndex = 17;
+            this.txtDescPorcentagem.TabIndex = 7;
+            this.txtDescPorcentagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -267,7 +270,8 @@
             this.txtDecontoValor.Location = new System.Drawing.Point(185, 77);
             this.txtDecontoValor.Name = "txtDecontoValor";
             this.txtDecontoValor.Size = new System.Drawing.Size(102, 23);
-            this.txtDecontoValor.TabIndex = 19;
+            this.txtDecontoValor.TabIndex = 8;
+            this.txtDecontoValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox3
             // 
@@ -275,7 +279,7 @@
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.txtValorPago);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.txtExibeTotalAPagar);
+            this.groupBox3.Controls.Add(this.lblExibeTotalAPagar);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.txtDecontoValor);
@@ -294,11 +298,10 @@
             // 
             this.lblExibeTroco.AutoSize = true;
             this.lblExibeTroco.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblExibeTroco.Location = new System.Drawing.Point(212, 185);
+            this.lblExibeTroco.Location = new System.Drawing.Point(265, 185);
             this.lblExibeTroco.Name = "lblExibeTroco";
-            this.lblExibeTroco.Size = new System.Drawing.Size(75, 17);
+            this.lblExibeTroco.Size = new System.Drawing.Size(0, 17);
             this.lblExibeTroco.TabIndex = 25;
-            this.lblExibeTroco.Text = "Valor Troco";
             // 
             // label17
             // 
@@ -315,7 +318,7 @@
             this.txtValorPago.Location = new System.Drawing.Point(185, 146);
             this.txtValorPago.Name = "txtValorPago";
             this.txtValorPago.Size = new System.Drawing.Size(102, 23);
-            this.txtValorPago.TabIndex = 23;
+            this.txtValorPago.TabIndex = 10;
             // 
             // label16
             // 
@@ -327,15 +330,14 @@
             this.label16.TabIndex = 22;
             this.label16.Text = "Valor Pago";
             // 
-            // txtExibeTotalAPagar
+            // lblExibeTotalAPagar
             // 
-            this.txtExibeTotalAPagar.AutoSize = true;
-            this.txtExibeTotalAPagar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtExibeTotalAPagar.Location = new System.Drawing.Point(127, 118);
-            this.txtExibeTotalAPagar.Name = "txtExibeTotalAPagar";
-            this.txtExibeTotalAPagar.Size = new System.Drawing.Size(160, 21);
-            this.txtExibeTotalAPagar.TabIndex = 21;
-            this.txtExibeTotalAPagar.Text = "Valor TOTAL A PAGAR";
+            this.lblExibeTotalAPagar.AutoSize = true;
+            this.lblExibeTotalAPagar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblExibeTotalAPagar.Location = new System.Drawing.Point(193, 118);
+            this.lblExibeTotalAPagar.Name = "lblExibeTotalAPagar";
+            this.lblExibeTotalAPagar.Size = new System.Drawing.Size(0, 21);
+            this.lblExibeTotalAPagar.TabIndex = 21;
             // 
             // label14
             // 
@@ -352,7 +354,7 @@
             this.btnNovaVenda.Location = new System.Drawing.Point(460, 12);
             this.btnNovaVenda.Name = "btnNovaVenda";
             this.btnNovaVenda.Size = new System.Drawing.Size(102, 23);
-            this.btnNovaVenda.TabIndex = 21;
+            this.btnNovaVenda.TabIndex = 1;
             this.btnNovaVenda.Text = "Nova Venda";
             this.btnNovaVenda.UseVisualStyleBackColor = true;
             this.btnNovaVenda.Click += new System.EventHandler(this.button1_Click);
@@ -362,7 +364,7 @@
             this.btnInserirItem.Location = new System.Drawing.Point(609, 124);
             this.btnInserirItem.Name = "btnInserirItem";
             this.btnInserirItem.Size = new System.Drawing.Size(102, 23);
-            this.btnInserirItem.TabIndex = 22;
+            this.btnInserirItem.TabIndex = 7;
             this.btnInserirItem.Text = "Inserir Item";
             this.btnInserirItem.UseVisualStyleBackColor = true;
             this.btnInserirItem.Click += new System.EventHandler(this.btnInserirItem_Click);
@@ -372,25 +374,27 @@
             this.btnFecharConta.Location = new System.Drawing.Point(609, 153);
             this.btnFecharConta.Name = "btnFecharConta";
             this.btnFecharConta.Size = new System.Drawing.Size(102, 23);
-            this.btnFecharConta.TabIndex = 23;
+            this.btnFecharConta.TabIndex = 9;
             this.btnFecharConta.Text = "Fechar Conta";
             this.btnFecharConta.UseVisualStyleBackColor = true;
+            this.btnFecharConta.Click += new System.EventHandler(this.btnFecharConta_Click);
             // 
             // btnReceberConta
             // 
             this.btnReceberConta.Location = new System.Drawing.Point(743, 153);
             this.btnReceberConta.Name = "btnReceberConta";
             this.btnReceberConta.Size = new System.Drawing.Size(102, 23);
-            this.btnReceberConta.TabIndex = 24;
+            this.btnReceberConta.TabIndex = 11;
             this.btnReceberConta.Text = "Receber Conta";
             this.btnReceberConta.UseVisualStyleBackColor = true;
+            this.btnReceberConta.Click += new System.EventHandler(this.btnReceberConta_Click);
             // 
             // btnCancelarItem
             // 
             this.btnCancelarItem.Location = new System.Drawing.Point(743, 124);
             this.btnCancelarItem.Name = "btnCancelarItem";
             this.btnCancelarItem.Size = new System.Drawing.Size(102, 23);
-            this.btnCancelarItem.TabIndex = 25;
+            this.btnCancelarItem.TabIndex = 12;
             this.btnCancelarItem.Text = "Cancelar Item";
             this.btnCancelarItem.UseVisualStyleBackColor = true;
             // 
@@ -399,7 +403,7 @@
             this.btnAbrirVenda.Location = new System.Drawing.Point(568, 13);
             this.btnAbrirVenda.Name = "btnAbrirVenda";
             this.btnAbrirVenda.Size = new System.Drawing.Size(102, 23);
-            this.btnAbrirVenda.TabIndex = 26;
+            this.btnAbrirVenda.TabIndex = 2;
             this.btnAbrirVenda.Text = "Abrir Venda";
             this.btnAbrirVenda.UseVisualStyleBackColor = true;
             // 
@@ -408,7 +412,7 @@
             this.btnCancelarVenda.Location = new System.Drawing.Point(676, 13);
             this.btnCancelarVenda.Name = "btnCancelarVenda";
             this.btnCancelarVenda.Size = new System.Drawing.Size(102, 23);
-            this.btnCancelarVenda.TabIndex = 27;
+            this.btnCancelarVenda.TabIndex = 3;
             this.btnCancelarVenda.Text = "Cancelar Venda";
             this.btnCancelarVenda.UseVisualStyleBackColor = true;
             // 
@@ -431,7 +435,7 @@
             this.lblExibeNumeroVenda.Size = new System.Drawing.Size(46, 21);
             this.lblExibeNumeroVenda.TabIndex = 28;
             this.lblExibeNumeroVenda.Text = "9999";
-            this.lblExibeNumeroVenda.Click += new System.EventHandler(this.lblExibeNumeroVenda_Click);
+            
             // 
             // btnSair
             // 
@@ -524,7 +528,7 @@
         private Label label17;
         private TextBox txtValorPago;
         private Label label16;
-        private Label txtExibeTotalAPagar;
+        private Label lblExibeTotalAPagar;
         private Label label14;
         private Button btnNovaVenda;
         private Button btnInserirItem;
